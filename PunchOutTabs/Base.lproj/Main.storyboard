@@ -35,7 +35,78 @@
                     <view key="view" contentMode="scaleToFill" id="kDA-AA-gUM">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contest Rules" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOr-9L-9mK">
+                                <rect key="frame" x="16" y="28" width="568" height="19.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The contest ends on June 30, 2015" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RM3-l0-Qto">
+                                <rect key="frame" x="16" y="55" width="568" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="rma-Sq-YJF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="rma-Sq-YJF"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The first rule of PunchOut is you don't talk about PunchOut." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FyC-L2-rR8">
+                                <rect key="frame" x="16" y="104" width="568" height="19.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The second rule of PunchOut is you don't talk about PunchOut." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNP-bu-bGA">
+                                <rect key="frame" x="16" y="131.5" width="568" height="19.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The third rule of PunchOut is you don't talk about PunchOut." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuM-rg-1TZ">
+                                <rect key="frame" x="16" y="159" width="568" height="19.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tmf-of-VYa" firstAttribute="top" secondItem="RM3-l0-Qto" secondAttribute="bottom" constant="481" id="1Pi-1C-rfe"/>
+                            <constraint firstItem="WOr-9L-9mK" firstAttribute="top" secondItem="GQX-U0-3Y0" secondAttribute="bottom" constant="8" symbolic="YES" id="4D1-Tj-5G4"/>
+                            <constraint firstItem="jNP-bu-bGA" firstAttribute="top" secondItem="FyC-L2-rR8" secondAttribute="bottom" constant="8" symbolic="YES" id="B28-fm-30q"/>
+                            <constraint firstItem="Tmf-of-VYa" firstAttribute="top" secondItem="RM3-l0-Qto" secondAttribute="bottom" constant="477" id="BTA-RY-qD0"/>
+                            <constraint firstItem="jNP-bu-bGA" firstAttribute="leading" secondItem="kDA-AA-gUM" secondAttribute="leadingMargin" id="HoB-R7-nj1"/>
+                            <constraint firstItem="IuM-rg-1TZ" firstAttribute="trailing" secondItem="kDA-AA-gUM" secondAttribute="trailingMargin" id="Qky-gK-M3D"/>
+                            <constraint firstItem="IuM-rg-1TZ" firstAttribute="leading" secondItem="kDA-AA-gUM" secondAttribute="leadingMargin" id="Sq7-H2-Nv4"/>
+                            <constraint firstItem="FyC-L2-rR8" firstAttribute="leading" secondItem="kDA-AA-gUM" secondAttribute="leadingMargin" id="Swj-gp-eZe"/>
+                            <constraint firstItem="FyC-L2-rR8" firstAttribute="top" secondItem="RM3-l0-Qto" secondAttribute="bottom" constant="32" id="TR0-xz-N77"/>
+                            <constraint firstItem="RM3-l0-Qto" firstAttribute="top" secondItem="WOr-9L-9mK" secondAttribute="bottom" constant="8" symbolic="YES" id="YNK-OJ-EDc"/>
+                            <constraint firstItem="FyC-L2-rR8" firstAttribute="trailing" secondItem="kDA-AA-gUM" secondAttribute="trailingMargin" id="bi1-Xp-de9"/>
+                            <constraint firstItem="RM3-l0-Qto" firstAttribute="trailing" secondItem="kDA-AA-gUM" secondAttribute="trailingMargin" id="jVK-aA-OWF"/>
+                            <constraint firstItem="IuM-rg-1TZ" firstAttribute="top" secondItem="jNP-bu-bGA" secondAttribute="bottom" constant="8" symbolic="YES" id="la2-Pd-f7S"/>
+                            <constraint firstItem="WOr-9L-9mK" firstAttribute="trailing" secondItem="RM3-l0-Qto" secondAttribute="trailing" id="oJj-iF-Jcf"/>
+                            <constraint firstItem="jNP-bu-bGA" firstAttribute="trailing" secondItem="kDA-AA-gUM" secondAttribute="trailingMargin" id="piV-cN-jhx"/>
+                            <constraint firstItem="WOr-9L-9mK" firstAttribute="trailing" secondItem="kDA-AA-gUM" secondAttribute="trailingMargin" id="x8B-W0-YUw"/>
+                            <constraint firstItem="WOr-9L-9mK" firstAttribute="leading" secondItem="kDA-AA-gUM" secondAttribute="leadingMargin" id="yC6-TW-j5u"/>
+                            <constraint firstItem="RM3-l0-Qto" firstAttribute="leading" secondItem="kDA-AA-gUM" secondAttribute="leadingMargin" id="zED-2b-qYS"/>
+                            <constraint firstItem="WOr-9L-9mK" firstAttribute="leading" secondItem="RM3-l0-Qto" secondAttribute="leading" id="zlm-jJ-tGi"/>
+                            <constraint firstItem="RM3-l0-Qto" firstAttribute="leading" secondItem="kDA-AA-gUM" secondAttribute="leadingMargin" id="znv-nh-iaw"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="oJj-iF-Jcf"/>
+                                <exclude reference="zlm-jJ-tGi"/>
+                                <exclude reference="znv-nh-iaw"/>
+                                <exclude reference="1Pi-1C-rfe"/>
+                                <exclude reference="BTA-RY-qD0"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Rules Info" image="icon_information" id="otg-27-LdE"/>
                 </viewController>
