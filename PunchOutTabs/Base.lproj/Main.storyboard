@@ -113,7 +113,7 @@
         <!--Settings-->
         <scene sceneID="niN-fR-oBS">
             <objects>
-                <viewController storyboardIdentifier="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="l5G-uM-TgZ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="l5G-uM-TgZ" customClass="SettingsViewController" customModule="PunchOutTabs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AaL-Vj-jVu"/>
                         <viewControllerLayoutGuide type="bottom" id="68T-pR-b6t"/>

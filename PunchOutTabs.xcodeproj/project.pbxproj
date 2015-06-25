@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA2973F81B3C55CE008C7FBD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2973F71B3C55CE008C7FBD /* SettingsViewController.swift */; };
 		AA8906BB1B3BB61300A42646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8906BA1B3BB61300A42646 /* AppDelegate.swift */; };
-		AA8906BD1B3BB61300A42646 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8906BC1B3BB61300A42646 /* ViewController.swift */; };
 		AA8906C01B3BB61300A42646 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA8906BE1B3BB61300A42646 /* Main.storyboard */; };
 		AA8906C21B3BB61300A42646 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA8906C11B3BB61300A42646 /* Images.xcassets */; };
 		AA8906C51B3BB61300A42646 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA8906C31B3BB61300A42646 /* LaunchScreen.xib */; };
@@ -31,10 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA2973F71B3C55CE008C7FBD /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		AA8906B51B3BB61300A42646 /* PunchOutTabs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PunchOutTabs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA8906B91B3BB61300A42646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA8906BA1B3BB61300A42646 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA8906BC1B3BB61300A42646 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AA8906BF1B3BB61300A42646 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA8906C11B3BB61300A42646 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AA8906C41B3BB61300A42646 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -66,6 +66,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA2973F61B3C54FC008C7FBD /* Leaderboard */ = {
+			isa = PBXGroup;
+			children = (
+				AA8906DA1B3BC27E00A42646 /* LeaderboardViewController.swift */,
+				AA8906DC1B3BC2A900A42646 /* LeaderboardDataSource.swift */,
+				AA8906DE1B3BC3B200A42646 /* DummyLeaderboardDataSource.swift */,
+				AA8906E01B3BC67F00A42646 /* LeaderboardTableViewCell.swift */,
+				AA8906E21B3BC8C600A42646 /* LeaderboardElement.swift */,
+			);
+			name = Leaderboard;
+			sourceTree = "<group>";
+		};
+		AA2973F91B3C5678008C7FBD /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AA2973F71B3C55CE008C7FBD /* SettingsViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		AA8906AC1B3BB61300A42646 = {
 			isa = PBXGroup;
 			children = (
@@ -88,16 +108,12 @@
 			isa = PBXGroup;
 			children = (
 				AA8906BA1B3BB61300A42646 /* AppDelegate.swift */,
-				AA8906BC1B3BB61300A42646 /* ViewController.swift */,
 				AA8906BE1B3BB61300A42646 /* Main.storyboard */,
 				AA8906C11B3BB61300A42646 /* Images.xcassets */,
 				AA8906C31B3BB61300A42646 /* LaunchScreen.xib */,
 				AA8906B81B3BB61300A42646 /* Supporting Files */,
-				AA8906DA1B3BC27E00A42646 /* LeaderboardViewController.swift */,
-				AA8906DC1B3BC2A900A42646 /* LeaderboardDataSource.swift */,
-				AA8906DE1B3BC3B200A42646 /* DummyLeaderboardDataSource.swift */,
-				AA8906E01B3BC67F00A42646 /* LeaderboardTableViewCell.swift */,
-				AA8906E21B3BC8C600A42646 /* LeaderboardElement.swift */,
+				AA2973F61B3C54FC008C7FBD /* Leaderboard */,
+				AA2973F91B3C5678008C7FBD /* Settings */,
 			);
 			path = PunchOutTabs;
 			sourceTree = "<group>";
@@ -227,9 +243,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA8906BD1B3BB61300A42646 /* ViewController.swift in Sources */,
 				AA8906DB1B3BC27E00A42646 /* LeaderboardViewController.swift in Sources */,
 				AA8906E31B3BC8C600A42646 /* LeaderboardElement.swift in Sources */,
+				AA2973F81B3C55CE008C7FBD /* SettingsViewController.swift in Sources */,
 				AA8906DF1B3BC3B200A42646 /* DummyLeaderboardDataSource.swift in Sources */,
 				AA8906E11B3BC67F00A42646 /* LeaderboardTableViewCell.swift in Sources */,
 				AA8906DD1B3BC2A900A42646 /* LeaderboardDataSource.swift in Sources */,
@@ -431,6 +447,7 @@
 				AA8906D61B3BB61300A42646 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA8906D71B3BB61300A42646 /* Build configuration list for PBXNativeTarget "PunchOutTabsTests" */ = {
 			isa = XCConfigurationList;
@@ -439,6 +456,7 @@
 				AA8906D91B3BB61300A42646 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
