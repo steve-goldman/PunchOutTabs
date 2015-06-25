@@ -8,7 +8,7 @@
         <!--My Card-->
         <scene sceneID="Yb0-1B-l91">
             <objects>
-                <viewController storyboardIdentifier="My Card" useStoryboardIdentifierAsRestorationIdentifier="YES" id="scX-uQ-9NJ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="My Card" useStoryboardIdentifierAsRestorationIdentifier="YES" id="scX-uQ-9NJ" customClass="CardViewController" customModule="PunchOutTabs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YHc-X2-Xzm"/>
                         <viewControllerLayoutGuide type="bottom" id="VLJ-1d-bkS"/>
@@ -27,7 +27,7 @@
         <!--Rules Info-->
         <scene sceneID="hUF-su-hXw">
             <objects>
-                <viewController storyboardIdentifier="Rules Info" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L35-Wz-FEQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Rules Info" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L35-Wz-FEQ" customClass="RulesInfoViewController" customModule="PunchOutTabs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GQX-U0-3Y0"/>
                         <viewControllerLayoutGuide type="bottom" id="Tmf-of-VYa"/>
