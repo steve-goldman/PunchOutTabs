@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="13" y="477"/>
         </scene>
-        <!--Info-->
+        <!--Rules Info-->
         <scene sceneID="hUF-su-hXw">
             <objects>
-                <viewController storyboardIdentifier="Info" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L35-Wz-FEQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Rules Info" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L35-Wz-FEQ" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GQX-U0-3Y0"/>
                         <viewControllerLayoutGuide type="bottom" id="Tmf-of-VYa"/>
@@ -36,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Info" image="icon_information" id="otg-27-LdE"/>
+                    <tabBarItem key="tabBarItem" title="Rules Info" image="icon_information" id="otg-27-LdE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pY-AD-uO0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
