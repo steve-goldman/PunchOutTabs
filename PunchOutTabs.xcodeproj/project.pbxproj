@@ -13,6 +13,11 @@
 		AA8906C21B3BB61300A42646 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA8906C11B3BB61300A42646 /* Images.xcassets */; };
 		AA8906C51B3BB61300A42646 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA8906C31B3BB61300A42646 /* LaunchScreen.xib */; };
 		AA8906D11B3BB61300A42646 /* PunchOutTabsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8906D01B3BB61300A42646 /* PunchOutTabsTests.swift */; };
+		AA8906DB1B3BC27E00A42646 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8906DA1B3BC27E00A42646 /* LeaderboardViewController.swift */; };
+		AA8906DD1B3BC2A900A42646 /* LeaderboardDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8906DC1B3BC2A900A42646 /* LeaderboardDataSource.swift */; };
+		AA8906DF1B3BC3B200A42646 /* DummyLeaderboardDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8906DE1B3BC3B200A42646 /* DummyLeaderboardDataSource.swift */; };
+		AA8906E11B3BC67F00A42646 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8906E01B3BC67F00A42646 /* LeaderboardTableViewCell.swift */; };
+		AA8906E31B3BC8C600A42646 /* LeaderboardElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8906E21B3BC8C600A42646 /* LeaderboardElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,11 @@
 		AA8906CA1B3BB61300A42646 /* PunchOutTabsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PunchOutTabsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA8906CF1B3BB61300A42646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA8906D01B3BB61300A42646 /* PunchOutTabsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunchOutTabsTests.swift; sourceTree = "<group>"; };
+		AA8906DA1B3BC27E00A42646 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
+		AA8906DC1B3BC2A900A42646 /* LeaderboardDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardDataSource.swift; sourceTree = "<group>"; };
+		AA8906DE1B3BC3B200A42646 /* DummyLeaderboardDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyLeaderboardDataSource.swift; sourceTree = "<group>"; };
+		AA8906E01B3BC67F00A42646 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
+		AA8906E21B3BC8C600A42646 /* LeaderboardElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardElement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +93,11 @@
 				AA8906C11B3BB61300A42646 /* Images.xcassets */,
 				AA8906C31B3BB61300A42646 /* LaunchScreen.xib */,
 				AA8906B81B3BB61300A42646 /* Supporting Files */,
+				AA8906DA1B3BC27E00A42646 /* LeaderboardViewController.swift */,
+				AA8906DC1B3BC2A900A42646 /* LeaderboardDataSource.swift */,
+				AA8906DE1B3BC3B200A42646 /* DummyLeaderboardDataSource.swift */,
+				AA8906E01B3BC67F00A42646 /* LeaderboardTableViewCell.swift */,
+				AA8906E21B3BC8C600A42646 /* LeaderboardElement.swift */,
 			);
 			path = PunchOutTabs;
 			sourceTree = "<group>";
@@ -213,6 +228,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA8906BD1B3BB61300A42646 /* ViewController.swift in Sources */,
+				AA8906DB1B3BC27E00A42646 /* LeaderboardViewController.swift in Sources */,
+				AA8906E31B3BC8C600A42646 /* LeaderboardElement.swift in Sources */,
+				AA8906DF1B3BC3B200A42646 /* DummyLeaderboardDataSource.swift in Sources */,
+				AA8906E11B3BC67F00A42646 /* LeaderboardTableViewCell.swift in Sources */,
+				AA8906DD1B3BC2A900A42646 /* LeaderboardDataSource.swift in Sources */,
 				AA8906BB1B3BB61300A42646 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
