@@ -40,6 +40,10 @@ class UserDefaultsCardDataSource: CardDataSource
         return card.count
     }
     
+    var numStamped: Int {
+        return card.reduce(0) { return $1 ? $0 + 1 : $0 }
+    }
+    
     func isStamped(index: Int) -> Bool {
         return card[index]
     }
@@ -47,10 +51,8 @@ class UserDefaultsCardDataSource: CardDataSource
     func stamp(index: Int, stamped stamp: Bool) {
         var newCard = card
         newCard[index] = stamp
-        println(newCard)
         defaults.setObject(newCard.map { $0 ? "true" : "false" }, forKey: key)
         defaults.synchronize()
-        println(defaults.stringArrayForKey(key))
     }
     
 }

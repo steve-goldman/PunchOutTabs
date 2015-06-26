@@ -141,11 +141,19 @@
                                     <constraint firstItem="8BV-8U-0To" firstAttribute="leading" secondItem="P1J-c3-DfG" secondAttribute="trailing" constant="8" symbolic="YES" id="zOW-69-nGa"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 more to go!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSJ-IX-BCb">
+                                <rect key="frame" x="253" y="307" width="94.5" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="SSJ-IX-BCb" secondAttribute="centerX" id="2xc-2x-zQD"/>
                             <constraint firstItem="53P-JO-U6A" firstAttribute="top" secondItem="YHc-X2-Xzm" secondAttribute="bottom" constant="8" symbolic="YES" id="KXQ-iE-XRe"/>
                             <constraint firstItem="tww-1a-KJF" firstAttribute="trailing" secondItem="Hsi-TQ-KtN" secondAttribute="trailingMargin" id="LKy-c2-tY8"/>
+                            <constraint firstItem="tww-1a-KJF" firstAttribute="top" secondItem="SSJ-IX-BCb" secondAttribute="bottom" constant="8" symbolic="YES" id="N8p-oA-QOq"/>
                             <constraint firstItem="VLJ-1d-bkS" firstAttribute="top" secondItem="tww-1a-KJF" secondAttribute="bottom" constant="8" symbolic="YES" id="VeN-sF-VnQ"/>
                             <constraint firstItem="tww-1a-KJF" firstAttribute="top" secondItem="YHc-X2-Xzm" secondAttribute="bottom" constant="450" id="WQK-hf-YuO"/>
                             <constraint firstItem="VLJ-1d-bkS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="53P-JO-U6A" secondAttribute="bottom" constant="502" id="gsn-oe-l5D"/>
@@ -161,6 +169,7 @@
                     <tabBarItem key="tabBarItem" title="My Card" image="icon_home" id="3gu-SQ-YXm"/>
                     <connections>
                         <outlet property="boxContainerView" destination="tww-1a-KJF" id="XzH-Lh-ss9"/>
+                        <outlet property="toGoLabel" destination="SSJ-IX-BCb" id="fsn-sB-rux"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaS-dO-paf" userLabel="First Responder" sceneMemberID="firstResponder"/>

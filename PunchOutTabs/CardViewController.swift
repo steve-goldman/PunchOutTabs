@@ -12,16 +12,19 @@ class CardViewController: UIViewController {
 
     var cardDataSource: CardDataSource!
     
-    @IBOutlet weak var boxContainerView: UIView! {
-        didSet {
-            cardDataSource = UserDefaultsCardDataSource(key: "mycard", count: boxContainerView.subviews.count)
-            
-            for subView in boxContainerView.subviews {
-                subView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "tappedBox:"))
-            }
-            
-            updateUI()
+    @IBOutlet weak var toGoLabel: UILabel!
+    
+    @IBOutlet weak var boxContainerView: UIView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        cardDataSource = UserDefaultsCardDataSource(key: "mycard", count: boxContainerView.subviews.count)
+        
+        for subView in boxContainerView.subviews {
+            subView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "tappedBox:"))
         }
+        
+        updateUI()
     }
     
     private func updateUI() {
@@ -29,6 +32,8 @@ class CardViewController: UIViewController {
             let subview = value as! UIView
             subview.backgroundColor = cardDataSource.isStamped(i) ? UIColor.redColor() : UIColor.blackColor()
         }
+        
+        toGoLabel.text = "\(cardDataSource.count - cardDataSource.numStamped) to go!"
     }
     
     func tappedBox(gesture: UITapGestureRecognizer) {
