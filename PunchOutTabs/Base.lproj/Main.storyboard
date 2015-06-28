@@ -20,9 +20,9 @@
                             <imageView userInteractionEnabled="NO" alpha="0.34999999999999964" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Card Background" translatesAutoresizingMaskIntoConstraints="NO" id="IeA-jQ-AIf">
                                 <rect key="frame" x="16" y="20" width="568" height="531"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14 DAYS. 8 CLASSES. GO." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="zPc-gk-jlo">
-                                <rect key="frame" x="131" y="263" width="338" height="45"/>
-                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Book" family="Kohinoor Devanagari" pointSize="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14 DAYS. 8 CLASSES. GO." textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zPc-gk-jlo">
+                                <rect key="frame" x="16" y="257.5" width="568" height="56"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Book" family="Kohinoor Devanagari" pointSize="40"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -31,16 +31,23 @@
                         <constraints>
                             <constraint firstItem="IeA-jQ-AIf" firstAttribute="bottom" secondItem="VLJ-1d-bkS" secondAttribute="top" id="6Tx-x2-azJ"/>
                             <constraint firstItem="IeA-jQ-AIf" firstAttribute="trailing" secondItem="Hsi-TQ-KtN" secondAttribute="trailingMargin" id="82Z-iH-044"/>
+                            <constraint firstItem="IeA-jQ-AIf" firstAttribute="centerY" secondItem="zPc-gk-jlo" secondAttribute="centerY" id="BLa-HA-1Ck"/>
                             <constraint firstItem="IeA-jQ-AIf" firstAttribute="top" secondItem="YHc-X2-Xzm" secondAttribute="bottom" id="I4D-j4-cgP"/>
                             <constraint firstItem="IeA-jQ-AIf" firstAttribute="centerX" secondItem="zPc-gk-jlo" secondAttribute="centerX" id="IwD-rC-oWH"/>
                             <constraint firstItem="IeA-jQ-AIf" firstAttribute="centerX" secondItem="zPc-gk-jlo" secondAttribute="centerX" id="NCR-gf-TgL"/>
                             <constraint firstItem="IeA-jQ-AIf" firstAttribute="leading" secondItem="Hsi-TQ-KtN" secondAttribute="leadingMargin" id="Rir-ZB-cJV"/>
+                            <constraint firstItem="zPc-gk-jlo" firstAttribute="leading" secondItem="Hsi-TQ-KtN" secondAttribute="leadingMargin" id="ga0-Ma-kyQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zPc-gk-jlo" secondAttribute="trailing" id="iwb-3R-2uN"/>
                             <constraint firstItem="VLJ-1d-bkS" firstAttribute="top" secondItem="zPc-gk-jlo" secondAttribute="bottom" constant="248" id="nZo-Pk-h4t"/>
+                            <constraint firstAttribute="centerY" secondItem="zPc-gk-jlo" secondAttribute="centerY" id="unC-iJ-0d9"/>
                             <constraint firstItem="IeA-jQ-AIf" firstAttribute="centerY" secondItem="zPc-gk-jlo" secondAttribute="centerY" id="xPd-e8-uRA"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="IwD-rC-oWH"/>
                                 <exclude reference="NCR-gf-TgL"/>
+                                <exclude reference="xPd-e8-uRA"/>
+                                <exclude reference="unC-iJ-0d9"/>
                                 <exclude reference="nZo-Pk-h4t"/>
                             </mask>
                         </variation>
