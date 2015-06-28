@@ -12,6 +12,8 @@
 		AA2973FE1B3C5CC4008C7FBD /* RulesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2973FD1B3C5CC4008C7FBD /* RulesInfoViewController.swift */; };
 		AA2974011B3CF043008C7FBD /* CardDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2974001B3CF043008C7FBD /* CardDataSource.swift */; };
 		AA2974051B3CF31D008C7FBD /* UserDefaultsCardDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2974041B3CF31D008C7FBD /* UserDefaultsCardDataSource.swift */; };
+		AA2974071B3E0364008C7FBD /* CardBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2974061B3E0364008C7FBD /* CardBoxView.swift */; };
+		AA29740D1B3F6D8B008C7FBD /* CardBoxViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA29740C1B3F6D8B008C7FBD /* CardBoxViewManager.swift */; };
 		AA8906BB1B3BB61300A42646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8906BA1B3BB61300A42646 /* AppDelegate.swift */; };
 		AA8906C01B3BB61300A42646 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA8906BE1B3BB61300A42646 /* Main.storyboard */; };
 		AA8906C21B3BB61300A42646 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA8906C11B3BB61300A42646 /* Images.xcassets */; };
@@ -40,6 +42,8 @@
 		AA2973FD1B3C5CC4008C7FBD /* RulesInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesInfoViewController.swift; sourceTree = "<group>"; };
 		AA2974001B3CF043008C7FBD /* CardDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDataSource.swift; sourceTree = "<group>"; };
 		AA2974041B3CF31D008C7FBD /* UserDefaultsCardDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsCardDataSource.swift; sourceTree = "<group>"; };
+		AA2974061B3E0364008C7FBD /* CardBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBoxView.swift; sourceTree = "<group>"; };
+		AA29740C1B3F6D8B008C7FBD /* CardBoxViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBoxViewManager.swift; sourceTree = "<group>"; };
 		AA8906B51B3BB61300A42646 /* PunchOutTabs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PunchOutTabs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA8906B91B3BB61300A42646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA8906BA1B3BB61300A42646 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 				AA2973FA1B3C5C79008C7FBD /* CardViewController.swift */,
 				AA2974001B3CF043008C7FBD /* CardDataSource.swift */,
 				AA2974041B3CF31D008C7FBD /* UserDefaultsCardDataSource.swift */,
+				AA2974061B3E0364008C7FBD /* CardBoxView.swift */,
+				AA29740C1B3F6D8B008C7FBD /* CardBoxViewManager.swift */,
 			);
 			name = Card;
 			sourceTree = "<group>";
@@ -280,8 +286,10 @@
 				AA2973FB1B3C5C79008C7FBD /* CardViewController.swift in Sources */,
 				AA8906E11B3BC67F00A42646 /* LeaderboardTableViewCell.swift in Sources */,
 				AA2974011B3CF043008C7FBD /* CardDataSource.swift in Sources */,
+				AA29740D1B3F6D8B008C7FBD /* CardBoxViewManager.swift in Sources */,
 				AA8906DD1B3BC2A900A42646 /* LeaderboardDataSource.swift in Sources */,
 				AA2973FE1B3C5CC4008C7FBD /* RulesInfoViewController.swift in Sources */,
+				AA2974071B3E0364008C7FBD /* CardBoxView.swift in Sources */,
 				AA8906BB1B3BB61300A42646 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

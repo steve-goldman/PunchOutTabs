@@ -15,19 +15,19 @@ class UserDefaultsCardDataSource: CardDataSource
     
     let key: String
     
-    init?(key: String, count: Int)
+    init(key: String, count: Int)
     {
         self.defaults = NSUserDefaults()
         self.key = key
 
         if let card = defaults.stringArrayForKey(key) {
-            if count != card.count {
-                return nil
+            if count == card.count {
+                return
             }
-        } else {
-            defaults.setObject([String](count: count, repeatedValue: "false"), forKey: key)
-            defaults.synchronize()
         }
+
+        defaults.setObject([String](count: count, repeatedValue: "false"), forKey: key)
+        defaults.synchronize()
     }
     
     private var card: [Bool] {
