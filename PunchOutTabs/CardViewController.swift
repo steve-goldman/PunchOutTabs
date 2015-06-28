@@ -42,9 +42,11 @@ class CardViewController: UIViewController {
     
     func cardBoxTapped(gesture: UITapGestureRecognizer) {
         let cardBoxView = gesture.view as! CardBoxView
-        let stamped = !cardDataSource.isStamped(cardBoxView.index)
-        cardDataSource.stamp(cardBoxView.index, stamped: stamped)
-        cardBoxView.stamped = stamped
+        if cardBoxView.contains(gesture.locationInView(cardBoxView)) {
+            let stamped = !cardDataSource.isStamped(cardBoxView.index)
+            cardDataSource.stamp(cardBoxView.index, stamped: stamped)
+            cardBoxView.stamped = stamped
+        }
     }
     
 }

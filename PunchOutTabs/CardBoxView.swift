@@ -13,6 +13,8 @@ class CardBoxView: UIView {
     
     let index: Int
     
+    private var path: UIBezierPath!
+    
     var stamped = false {
         didSet {
             setNeedsDisplay()
@@ -37,12 +39,16 @@ class CardBoxView: UIView {
 
     override func drawRect(rect: CGRect) {
         
-        let path = UIBezierPath(ovalInRect: bounds.pinchedRect(pinch: CGFloat(2)))
+        path = UIBezierPath(ovalInRect: bounds.pinchedRect(pinch: CGFloat(2)))
         
         stamped ? UIColor.yellowColor().set() : UIColor.blueColor().set()
         
         path.fill()
         path.stroke()
+    }
+    
+    func contains(point: CGPoint) -> Bool {
+        return path.containsPoint(point)
     }
 
 }
