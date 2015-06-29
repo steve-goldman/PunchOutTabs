@@ -64,8 +64,11 @@ class MustLoginTabBarController: UITabBarController, PFLogInViewControllerDelega
         }
         
         return true
-
     }
     
-    
+    func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
+        UIAlertView(title: "Welcome to Punchy", message: "We're excited you're with us!", delegate: nil, cancelButtonTitle: "Continue").show()
+        PFUser.logInWithUsername(user.username!, password: user.password!)
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }
