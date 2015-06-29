@@ -237,10 +237,10 @@
             </objects>
             <point key="canvasLocation" x="12" y="-186"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Must Login Tab Bar Controller-->
         <scene sceneID="0kV-En-v3Y">
             <objects>
-                <tabBarController id="GIN-HE-bRm" sceneMemberID="viewController">
+                <tabBarController id="GIN-HE-bRm" customClass="MustLoginTabBarController" customModule="PunchOutTabs" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="rGD-Oe-wTi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
