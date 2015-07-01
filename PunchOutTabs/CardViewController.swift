@@ -46,6 +46,14 @@ class CardViewController: UIViewController {
             let stamped = !cardDataSource.isStamped(cardBoxView.index)
             cardDataSource.stamp(cardBoxView.index, stamped: stamped)
             cardBoxView.stamped = stamped
+            performSegueWithIdentifier("Stamp", sender: self)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segue.identifier! {
+            case "Stamp": fallthrough
+            default: break
         }
     }
     

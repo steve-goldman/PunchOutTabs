@@ -55,11 +55,32 @@
                     <tabBarItem key="tabBarItem" title="My Card" image="icon_home" id="3gu-SQ-YXm"/>
                     <connections>
                         <outlet property="centerLabel" destination="zPc-gk-jlo" id="IRP-Nc-Qnt"/>
+                        <segue destination="qFc-M6-rmL" kind="popoverPresentation" identifier="Stamp" popoverAnchorView="zPc-gk-jlo" id="iha-hr-uV3">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaS-dO-paf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="13" y="477"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="lsS-Ds-bZE">
+            <objects>
+                <viewController id="qFc-M6-rmL" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Khd-Im-THy"/>
+                        <viewControllerLayoutGuide type="bottom" id="VfI-gB-gDo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="73P-Aj-QhP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fp6-S3-RW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="776" y="477"/>
         </scene>
         <!--Rules Info-->
         <scene sceneID="hUF-su-hXw">
