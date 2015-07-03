@@ -1,5 +1,5 @@
 //
-//  GymsDataSourceParseImplTest.swift
+//  ClassesDataSourceParseImplTest.swift
 //  PunchOutTabs
 //
 //  Created by Steve Goldman on 7/1/15.
@@ -11,7 +11,7 @@ import XCTest
 import PunchOutTabs
 import Parse
 
-class GymsDataSourceParseImplTest: XCTestCase {
+class ClassesDataSourceParseImplTest: XCTestCase {
 
     let chezStu = PFGeoPoint(latitude: 40.677701, longitude: -73.974661)
     
@@ -25,14 +25,15 @@ class GymsDataSourceParseImplTest: XCTestCase {
 
     func testExample() {
         let gds = GymsDataSourceParseImpl(async: false)
-        var calledBack = false
-        gds.nearestGyms(chezStu, limit: 3) { (gyms: [Gym]?) in
-            calledBack = true
-            for gym in gyms! {
-                println(gym)
+        gds.nearestGyms(chezStu, limit: 1) { (gyms: [Gym]?) in
+            let gym = gyms![0]
+            let cds = ClassesDataSourceParseImpl(async: false)
+            cds.classesForGym(gym, limit: 10) { (classes: [Class]?) in
+                for clazz in classes! {
+                    println(clazz)
+                }
             }
         }
-        XCTAssertTrue(calledBack)
     }
 
 }

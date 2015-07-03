@@ -9,13 +9,22 @@
 import Foundation
 import Parse
 
-public struct Gym
+public class Gym: Printable
 {
-    public let name: String
+    let name: String
     let location: PFGeoPoint
+    
+    init(name: String, location: PFGeoPoint) {
+        self.name = name
+        self.location = location
+    }
+    
+    public var description: String {
+        return "Gym[\(name)]"
+    }
 }
 
-public typealias NearestGymsCallback = (gym: [Gym]?) -> ()
+public typealias NearestGymsCallback = (gyms: [Gym]?) -> ()
 
 public protocol GymsDataSource
 {

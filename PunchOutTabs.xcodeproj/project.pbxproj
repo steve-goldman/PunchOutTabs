@@ -44,10 +44,13 @@
 		AA8906DF1B3BC3B200A42646 /* DummyLeaderboardDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8906DE1B3BC3B200A42646 /* DummyLeaderboardDataSource.swift */; };
 		AA8906E11B3BC67F00A42646 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8906E01B3BC67F00A42646 /* LeaderboardTableViewCell.swift */; };
 		AA8906E31B3BC8C600A42646 /* LeaderboardElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8906E21B3BC8C600A42646 /* LeaderboardElement.swift */; };
+		AA9B511A1B43AADC007E95EF /* ClassesDataSourceParseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9B51191B43AADC007E95EF /* ClassesDataSourceParseImpl.swift */; };
+		AA9B511C1B43B0CA007E95EF /* ClassesDataSourceParseImplTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9B511B1B43B0CA007E95EF /* ClassesDataSourceParseImplTest.swift */; };
 		AADC0E5D1B43A2CC00C0F92C /* Gyms.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC0E5C1B43A2CC00C0F92C /* Gyms.swift */; };
 		AADC0E5F1B43A36700C0F92C /* GymsDataSourceParseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC0E5E1B43A36700C0F92C /* GymsDataSourceParseImpl.swift */; };
 		AADC0E611B43A3E100C0F92C /* ParseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC0E601B43A3E100C0F92C /* ParseDataSource.swift */; };
 		AADC0E641B43A74C00C0F92C /* GymsDataSourceParseImplTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC0E631B43A74C00C0F92C /* GymsDataSourceParseImplTest.swift */; };
+		AADC0E661B43A99700C0F92C /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC0E651B43A99700C0F92C /* Classes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,10 +104,13 @@
 		AA8906DE1B3BC3B200A42646 /* DummyLeaderboardDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyLeaderboardDataSource.swift; sourceTree = "<group>"; };
 		AA8906E01B3BC67F00A42646 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
 		AA8906E21B3BC8C600A42646 /* LeaderboardElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardElement.swift; sourceTree = "<group>"; };
+		AA9B51191B43AADC007E95EF /* ClassesDataSourceParseImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesDataSourceParseImpl.swift; sourceTree = "<group>"; };
+		AA9B511B1B43B0CA007E95EF /* ClassesDataSourceParseImplTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesDataSourceParseImplTest.swift; sourceTree = "<group>"; };
 		AADC0E5C1B43A2CC00C0F92C /* Gyms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gyms.swift; sourceTree = "<group>"; };
 		AADC0E5E1B43A36700C0F92C /* GymsDataSourceParseImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymsDataSourceParseImpl.swift; sourceTree = "<group>"; };
 		AADC0E601B43A3E100C0F92C /* ParseDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseDataSource.swift; sourceTree = "<group>"; };
 		AADC0E631B43A74C00C0F92C /* GymsDataSourceParseImplTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymsDataSourceParseImplTest.swift; sourceTree = "<group>"; };
+		AADC0E651B43A99700C0F92C /* Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +290,8 @@
 				AADC0E5C1B43A2CC00C0F92C /* Gyms.swift */,
 				AADC0E5E1B43A36700C0F92C /* GymsDataSourceParseImpl.swift */,
 				AADC0E601B43A3E100C0F92C /* ParseDataSource.swift */,
+				AADC0E651B43A99700C0F92C /* Classes.swift */,
+				AA9B51191B43AADC007E95EF /* ClassesDataSourceParseImpl.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -292,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				AADC0E631B43A74C00C0F92C /* GymsDataSourceParseImplTest.swift */,
+				AA9B511B1B43B0CA007E95EF /* ClassesDataSourceParseImplTest.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -403,12 +412,14 @@
 				AA8906E31B3BC8C600A42646 /* LeaderboardElement.swift in Sources */,
 				AA2973F81B3C55CE008C7FBD /* SettingsViewController.swift in Sources */,
 				AA8906DF1B3BC3B200A42646 /* DummyLeaderboardDataSource.swift in Sources */,
+				AA9B511A1B43AADC007E95EF /* ClassesDataSourceParseImpl.swift in Sources */,
 				AA2973FB1B3C5C79008C7FBD /* CardViewController.swift in Sources */,
 				AA8906E11B3BC67F00A42646 /* LeaderboardTableViewCell.swift in Sources */,
 				AA2974341B40BCEE008C7FBD /* SignUpValidator.swift in Sources */,
 				AA2974011B3CF043008C7FBD /* CardDataSource.swift in Sources */,
 				AA29740D1B3F6D8B008C7FBD /* CardBoxViewManager.swift in Sources */,
 				AADC0E5D1B43A2CC00C0F92C /* Gyms.swift in Sources */,
+				AADC0E661B43A99700C0F92C /* Classes.swift in Sources */,
 				AADC0E611B43A3E100C0F92C /* ParseDataSource.swift in Sources */,
 				AA8906DD1B3BC2A900A42646 /* LeaderboardDataSource.swift in Sources */,
 				AA2973FE1B3C5CC4008C7FBD /* RulesInfoViewController.swift in Sources */,
@@ -423,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AADC0E641B43A74C00C0F92C /* GymsDataSourceParseImplTest.swift in Sources */,
+				AA9B511C1B43B0CA007E95EF /* ClassesDataSourceParseImplTest.swift in Sources */,
 				AA2974391B40BFAD008C7FBD /* SignUpValidatorTests.swift in Sources */,
 				AA8906D11B3BB61300A42646 /* PunchOutTabsTests.swift in Sources */,
 			);

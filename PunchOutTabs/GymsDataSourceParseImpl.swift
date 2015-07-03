@@ -17,7 +17,7 @@ public class GymsDataSourceParseImpl: ParseDataSource, GymsDataSource
         query.limit = limit
         findObjects(query) { (results: [AnyObject]?, error: NSError?) in
             if let gyms = results {
-                callback(gym: gyms.map { Gym(name: ($0[Gym.NameKey] as! String), location: $0[Gym.LocationKey] as! PFGeoPoint) })
+                callback(gyms: gyms.map { return Gym(name: ($0[Gym.NameKey] as! String), location: $0[Gym.LocationKey] as! PFGeoPoint) })
             }
         }
     }
