@@ -21,7 +21,7 @@ class MustLoginTabBarController: UITabBarController, PFLogInViewControllerDelega
         if PFUser.currentUser() == nil {
             
             // the login view controller
-            var logInViewController = PFLogInViewController()
+            var logInViewController = MyLogInViewController()
             logInViewController.delegate = self
             
             // the signup view controller

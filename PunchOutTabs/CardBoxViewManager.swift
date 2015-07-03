@@ -144,12 +144,12 @@ class MultipleCardBoxContainerViewManager
 
 class TwoTwoByTwoCardBoxViewManager: MultipleCardBoxContainerViewManager
 {
-    static let NumBoxes = 8
+    static let NumBoxes = 13
     
     init(parentView: UIView, vertBuffer: CGFloat = 0.05, horizBuffer: CGFloat = 0.05, forceSquare: Bool = false, initializer: () -> UIView) {
         super.init(cardBoxContainers: [
             MbyNCardBoxViewManager(m: 2, n: 2, parentView: parentView, vertBuffer: vertBuffer, horizBuffer: horizBuffer, forceSquare: forceSquare, initializer: initializer),
-            MbyNCardBoxViewManager(m: 2, n: 2, parentView: parentView, vertBuffer: vertBuffer, horizBuffer: horizBuffer, forceSquare: forceSquare, initializer: initializer) ])
+            MbyNCardBoxViewManager(m: 3, n: 3, parentView: parentView, vertBuffer: vertBuffer, horizBuffer: horizBuffer, forceSquare: forceSquare, initializer: initializer) ])
     }
 
 }

@@ -44,6 +44,7 @@
 		AA8906DF1B3BC3B200A42646 /* DummyLeaderboardDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8906DE1B3BC3B200A42646 /* DummyLeaderboardDataSource.swift */; };
 		AA8906E11B3BC67F00A42646 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8906E01B3BC67F00A42646 /* LeaderboardTableViewCell.swift */; };
 		AA8906E31B3BC8C600A42646 /* LeaderboardElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8906E21B3BC8C600A42646 /* LeaderboardElement.swift */; };
+		AA8A25041B471256009C1562 /* MyLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8A25031B471256009C1562 /* MyLogInViewController.swift */; };
 		AA9B511A1B43AADC007E95EF /* ClassesDataSourceParseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9B51191B43AADC007E95EF /* ClassesDataSourceParseImpl.swift */; };
 		AA9B511C1B43B0CA007E95EF /* ClassesDataSourceParseImplTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9B511B1B43B0CA007E95EF /* ClassesDataSourceParseImplTest.swift */; };
 		AADC0E5D1B43A2CC00C0F92C /* Gyms.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC0E5C1B43A2CC00C0F92C /* Gyms.swift */; };
@@ -104,6 +105,7 @@
 		AA8906DE1B3BC3B200A42646 /* DummyLeaderboardDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyLeaderboardDataSource.swift; sourceTree = "<group>"; };
 		AA8906E01B3BC67F00A42646 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
 		AA8906E21B3BC8C600A42646 /* LeaderboardElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardElement.swift; sourceTree = "<group>"; };
+		AA8A25031B471256009C1562 /* MyLogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLogInViewController.swift; sourceTree = "<group>"; };
 		AA9B51191B43AADC007E95EF /* ClassesDataSourceParseImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesDataSourceParseImpl.swift; sourceTree = "<group>"; };
 		AA9B511B1B43B0CA007E95EF /* ClassesDataSourceParseImplTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesDataSourceParseImplTest.swift; sourceTree = "<group>"; };
 		AADC0E5C1B43A2CC00C0F92C /* Gyms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gyms.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			children = (
 				AA2974281B40B117008C7FBD /* MustLoginTabBarController.swift */,
 				AA2974331B40BCEE008C7FBD /* SignUpValidator.swift */,
+				AA8A25031B471256009C1562 /* MyLogInViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA8A25041B471256009C1562 /* MyLogInViewController.swift in Sources */,
 				AA8906DB1B3BC27E00A42646 /* LeaderboardViewController.swift in Sources */,
 				AA2974051B3CF31D008C7FBD /* UserDefaultsCardDataSource.swift in Sources */,
 				AA2974291B40B117008C7FBD /* MustLoginTabBarController.swift in Sources */,
