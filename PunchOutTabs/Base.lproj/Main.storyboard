@@ -240,7 +240,7 @@
             </objects>
             <point key="canvasLocation" x="10" y="1930"/>
         </scene>
-        <!--View Controller-->
+        <!--Punch It-->
         <scene sceneID="Irr-UK-5UR">
             <objects>
                 <viewController id="9VW-an-shx" sceneMemberID="viewController">
@@ -333,17 +333,17 @@
                                 <exclude reference="bRG-pT-Gwl"/>
                                 <exclude reference="dM7-ov-IBv"/>
                                 <exclude reference="u3o-8P-wj1"/>
-                                <exclude reference="Wha-NN-LiJ"/>
                                 <exclude reference="2lY-I2-Jjx"/>
                                 <exclude reference="C81-xL-Ult"/>
                                 <exclude reference="EXU-Wc-BnW"/>
                                 <exclude reference="RjV-N2-QVW"/>
                                 <exclude reference="f0t-7D-XML"/>
                                 <exclude reference="xaN-Dq-A94"/>
+                                <exclude reference="Wha-NN-LiJ"/>
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="topRated" id="wl4-kJ-zhx"/>
+                    <tabBarItem key="tabBarItem" title="Punch It" image="icon_star" id="wl4-kJ-zhx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p4t-N9-mRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -399,5 +399,6 @@
         <image name="icon_home" width="30" height="30"/>
         <image name="icon_information" width="30" height="30"/>
         <image name="icon_settings" width="30" height="30"/>
+        <image name="icon_star" width="1500" height="1000"/>
     </resources>
 </document>
