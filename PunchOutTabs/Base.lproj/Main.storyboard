@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--My Card-->
+        <!--My Cards-->
         <scene sceneID="Yb0-1B-l91">
             <objects>
-                <viewController storyboardIdentifier="My Card" useStoryboardIdentifierAsRestorationIdentifier="YES" id="scX-uQ-9NJ" customClass="CardViewController" customModule="PunchOutTabs" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="My Card" useStoryboardIdentifierAsRestorationIdentifier="YES" id="scX-uQ-9NJ" userLabel="My Cards" customClass="CardViewController" customModule="PunchOutTabs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YHc-X2-Xzm"/>
                         <viewControllerLayoutGuide type="bottom" id="VLJ-1d-bkS"/>
@@ -53,7 +53,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Card" image="icon_home" id="3gu-SQ-YXm"/>
+                    <tabBarItem key="tabBarItem" title="My Cards" image="icon_home" id="3gu-SQ-YXm" userLabel="My Cards"/>
                     <connections>
                         <outlet property="centerLabel" destination="zPc-gk-jlo" id="IRP-Nc-Qnt"/>
                         <segue destination="qFc-M6-rmL" kind="popoverPresentation" identifier="Stamp" popoverAnchorView="zPc-gk-jlo" id="iha-hr-uV3">
@@ -63,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaS-dO-paf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13" y="477"/>
+            <point key="canvasLocation" x="-16" y="2201"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="lsS-Ds-bZE">
@@ -81,164 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fp6-S3-RW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="776" y="477"/>
-        </scene>
-        <!--Rules Info-->
-        <scene sceneID="hUF-su-hXw">
-            <objects>
-                <viewController storyboardIdentifier="Rules Info" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L35-Wz-FEQ" customClass="RulesInfoViewController" customModule="PunchOutTabs" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="GQX-U0-3Y0"/>
-                        <viewControllerLayoutGuide type="bottom" id="Tmf-of-VYa"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kDA-AA-gUM">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contest Rules" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOr-9L-9mK">
-                                <rect key="frame" x="16" y="28" width="568" height="19.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The contest ends on June 30, 2015" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RM3-l0-Qto">
-                                <rect key="frame" x="16" y="55" width="568" height="17"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="17" id="rma-Sq-YJF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="rma-Sq-YJF"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The first rule of PunchOut is you don't talk about PunchOut." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FyC-L2-rR8">
-                                <rect key="frame" x="16" y="104" width="568" height="19.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The second rule of PunchOut is you don't talk about PunchOut." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNP-bu-bGA">
-                                <rect key="frame" x="16" y="131.5" width="568" height="19.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The third rule of PunchOut is you don't talk about PunchOut." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuM-rg-1TZ">
-                                <rect key="frame" x="16" y="159" width="568" height="19.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Tmf-of-VYa" firstAttribute="top" secondItem="RM3-l0-Qto" secondAttribute="bottom" constant="481" id="1Pi-1C-rfe"/>
-                            <constraint firstItem="WOr-9L-9mK" firstAttribute="top" secondItem="GQX-U0-3Y0" secondAttribute="bottom" constant="8" symbolic="YES" id="4D1-Tj-5G4"/>
-                            <constraint firstItem="jNP-bu-bGA" firstAttribute="top" secondItem="FyC-L2-rR8" secondAttribute="bottom" constant="8" symbolic="YES" id="B28-fm-30q"/>
-                            <constraint firstItem="Tmf-of-VYa" firstAttribute="top" secondItem="RM3-l0-Qto" secondAttribute="bottom" constant="477" id="BTA-RY-qD0"/>
-                            <constraint firstItem="jNP-bu-bGA" firstAttribute="leading" secondItem="kDA-AA-gUM" secondAttribute="leadingMargin" id="HoB-R7-nj1"/>
-                            <constraint firstItem="IuM-rg-1TZ" firstAttribute="trailing" secondItem="kDA-AA-gUM" secondAttribute="trailingMargin" id="Qky-gK-M3D"/>
-                            <constraint firstItem="IuM-rg-1TZ" firstAttribute="leading" secondItem="kDA-AA-gUM" secondAttribute="leadingMargin" id="Sq7-H2-Nv4"/>
-                            <constraint firstItem="FyC-L2-rR8" firstAttribute="leading" secondItem="kDA-AA-gUM" secondAttribute="leadingMargin" id="Swj-gp-eZe"/>
-                            <constraint firstItem="FyC-L2-rR8" firstAttribute="top" secondItem="RM3-l0-Qto" secondAttribute="bottom" constant="32" id="TR0-xz-N77"/>
-                            <constraint firstItem="RM3-l0-Qto" firstAttribute="top" secondItem="WOr-9L-9mK" secondAttribute="bottom" constant="8" symbolic="YES" id="YNK-OJ-EDc"/>
-                            <constraint firstItem="FyC-L2-rR8" firstAttribute="trailing" secondItem="kDA-AA-gUM" secondAttribute="trailingMargin" id="bi1-Xp-de9"/>
-                            <constraint firstItem="RM3-l0-Qto" firstAttribute="trailing" secondItem="kDA-AA-gUM" secondAttribute="trailingMargin" id="jVK-aA-OWF"/>
-                            <constraint firstItem="IuM-rg-1TZ" firstAttribute="top" secondItem="jNP-bu-bGA" secondAttribute="bottom" constant="8" symbolic="YES" id="la2-Pd-f7S"/>
-                            <constraint firstItem="WOr-9L-9mK" firstAttribute="trailing" secondItem="RM3-l0-Qto" secondAttribute="trailing" id="oJj-iF-Jcf"/>
-                            <constraint firstItem="jNP-bu-bGA" firstAttribute="trailing" secondItem="kDA-AA-gUM" secondAttribute="trailingMargin" id="piV-cN-jhx"/>
-                            <constraint firstItem="WOr-9L-9mK" firstAttribute="trailing" secondItem="kDA-AA-gUM" secondAttribute="trailingMargin" id="x8B-W0-YUw"/>
-                            <constraint firstItem="WOr-9L-9mK" firstAttribute="leading" secondItem="kDA-AA-gUM" secondAttribute="leadingMargin" id="yC6-TW-j5u"/>
-                            <constraint firstItem="RM3-l0-Qto" firstAttribute="leading" secondItem="kDA-AA-gUM" secondAttribute="leadingMargin" id="zED-2b-qYS"/>
-                            <constraint firstItem="WOr-9L-9mK" firstAttribute="leading" secondItem="RM3-l0-Qto" secondAttribute="leading" id="zlm-jJ-tGi"/>
-                            <constraint firstItem="RM3-l0-Qto" firstAttribute="leading" secondItem="kDA-AA-gUM" secondAttribute="leadingMargin" id="znv-nh-iaw"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="oJj-iF-Jcf"/>
-                                <exclude reference="zlm-jJ-tGi"/>
-                                <exclude reference="znv-nh-iaw"/>
-                                <exclude reference="1Pi-1C-rfe"/>
-                                <exclude reference="BTA-RY-qD0"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Rules Info" image="icon_information" id="otg-27-LdE"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6pY-AD-uO0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="12" y="1192"/>
-        </scene>
-        <!--Leaderboard-->
-        <scene sceneID="LbT-7o-WtA">
-            <objects>
-                <viewController storyboardIdentifier="Leaderboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FfU-a0-x8T" customClass="LeaderboardViewController" customModule="PunchOutTabs" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="EMT-wT-quv"/>
-                        <viewControllerLayoutGuide type="bottom" id="TcR-Al-2VB"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dyS-oQ-6WZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1Vi-hS-NJ7">
-                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="LeaderboardEntry" id="EzZ-60-Se4" customClass="LeaderboardTableViewCell" customModule="PunchOutTabs" customModuleProvider="target">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EzZ-60-Se4" id="pTg-sl-sDD">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tally" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9k-ve-3Yc">
-                                                    <rect key="frame" x="8" y="12" width="33" height="20"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAY-U7-UeQ">
-                                                    <rect key="frame" x="49" y="12" width="43" height="20"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="J9k-ve-3Yc" firstAttribute="centerY" secondItem="OAY-U7-UeQ" secondAttribute="centerY" id="ERJ-hv-R6g"/>
-                                                <constraint firstAttribute="centerY" secondItem="J9k-ve-3Yc" secondAttribute="centerY" id="OyE-sr-03c"/>
-                                                <constraint firstItem="J9k-ve-3Yc" firstAttribute="leading" secondItem="pTg-sl-sDD" secondAttribute="leadingMargin" id="S1G-RW-urf"/>
-                                                <constraint firstItem="OAY-U7-UeQ" firstAttribute="leading" secondItem="J9k-ve-3Yc" secondAttribute="trailing" constant="8" symbolic="YES" id="uUH-fl-TD2"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="nameLabel" destination="OAY-U7-UeQ" id="BrX-qo-jY6"/>
-                                            <outlet property="tallyLabel" destination="J9k-ve-3Yc" id="APE-NL-AK3"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="FfU-a0-x8T" id="xml-jF-E74"/>
-                                    <outlet property="delegate" destination="FfU-a0-x8T" id="xKp-Dw-sbx"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="1Vi-hS-NJ7" firstAttribute="bottom" secondItem="TcR-Al-2VB" secondAttribute="top" id="4CI-1B-qA0"/>
-                            <constraint firstAttribute="trailing" secondItem="1Vi-hS-NJ7" secondAttribute="trailing" id="TcM-tL-Hpp"/>
-                            <constraint firstItem="1Vi-hS-NJ7" firstAttribute="top" secondItem="EMT-wT-quv" secondAttribute="bottom" id="dte-2t-uKC"/>
-                            <constraint firstItem="1Vi-hS-NJ7" firstAttribute="leading" secondItem="dyS-oQ-6WZ" secondAttribute="leading" id="qPi-Gj-bHU"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Leaderboard" image="icon_flag" id="Dsm-23-0ov"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GmF-CN-oRL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="10" y="1930"/>
+            <point key="canvasLocation" x="800" y="2201"/>
         </scene>
         <!--Punch It-->
         <scene sceneID="Irr-UK-5UR">
@@ -347,7 +190,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p4t-N9-mRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="67" y="-872"/>
+            <point key="canvasLocation" x="-16" y="572"/>
         </scene>
         <!--Settings-->
         <scene sceneID="niN-fR-oBS">
@@ -366,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ncW-ON-7Cj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12" y="-186"/>
+            <point key="canvasLocation" x="-16" y="1406"/>
         </scene>
         <!--Must Login Tab Bar Controller-->
         <scene sceneID="0kV-En-v3Y">
@@ -379,11 +222,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="l5G-uM-TgZ" kind="relationship" relationship="viewControllers" id="s1w-2h-YmZ"/>
-                        <segue destination="scX-uQ-9NJ" kind="relationship" relationship="viewControllers" id="M2t-Xp-0jX"/>
-                        <segue destination="L35-Wz-FEQ" kind="relationship" relationship="viewControllers" id="Xfg-cr-GYh"/>
-                        <segue destination="FfU-a0-x8T" kind="relationship" relationship="viewControllers" id="rPr-nT-zXb"/>
                         <segue destination="9VW-an-shx" kind="relationship" relationship="viewControllers" id="qVz-fH-Cpe"/>
+                        <segue destination="scX-uQ-9NJ" kind="relationship" relationship="viewControllers" id="dCQ-rN-002"/>
+                        <segue destination="l5G-uM-TgZ" kind="relationship" relationship="viewControllers" id="1Wb-vZ-SWF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wnu-ul-MBx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -395,10 +236,8 @@
         <image name="Card Background" width="1500" height="1000"/>
         <image name="bg_smiling" width="2448" height="2448"/>
         <image name="blue_star" width="948" height="903"/>
-        <image name="icon_flag" width="30" height="30"/>
         <image name="icon_home" width="30" height="30"/>
-        <image name="icon_information" width="30" height="30"/>
         <image name="icon_settings" width="30" height="30"/>
-        <image name="icon_star" width="1500" height="1000"/>
+        <image name="icon_star" width="30" height="30"/>
     </resources>
 </document>
