@@ -18,42 +18,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.34999999999999964" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Card Background" translatesAutoresizingMaskIntoConstraints="NO" id="IeA-jQ-AIf">
-                                <rect key="frame" x="16" y="20" width="568" height="531"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSk-yS-sdF" userLabel="BG Color">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" alpha="0.34999999999999964" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Card Background" translatesAutoresizingMaskIntoConstraints="NO" id="IeA-jQ-AIf" userLabel="BG Image">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14 DAYS. 8 CLASSES. GO." textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zPc-gk-jlo">
-                                <rect key="frame" x="16" y="257.5" width="568" height="56"/>
+                                <rect key="frame" x="16" y="280" width="568" height="56"/>
                                 <fontDescription key="fontDescription" name="KohinoorDevanagari-Book" family="Kohinoor Devanagari" pointSize="40"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="IeA-jQ-AIf" firstAttribute="bottom" secondItem="VLJ-1d-bkS" secondAttribute="top" id="6Tx-x2-azJ"/>
-                            <constraint firstItem="IeA-jQ-AIf" firstAttribute="trailing" secondItem="Hsi-TQ-KtN" secondAttribute="trailingMargin" id="82Z-iH-044"/>
+                            <constraint firstItem="IeA-jQ-AIf" firstAttribute="trailing" secondItem="Hsi-TQ-KtN" secondAttribute="trailing" id="82Z-iH-044"/>
+                            <constraint firstItem="RSk-yS-sdF" firstAttribute="leading" secondItem="Hsi-TQ-KtN" secondAttribute="leading" id="AlD-Qz-kYC"/>
                             <constraint firstItem="IeA-jQ-AIf" firstAttribute="centerY" secondItem="zPc-gk-jlo" secondAttribute="centerY" id="BLa-HA-1Ck"/>
                             <constraint firstItem="IeA-jQ-AIf" firstAttribute="top" secondItem="YHc-X2-Xzm" secondAttribute="bottom" id="I4D-j4-cgP"/>
                             <constraint firstItem="IeA-jQ-AIf" firstAttribute="centerX" secondItem="zPc-gk-jlo" secondAttribute="centerX" id="IwD-rC-oWH"/>
+                            <constraint firstItem="RSk-yS-sdF" firstAttribute="top" secondItem="YHc-X2-Xzm" secondAttribute="bottom" id="Ksc-Dv-AlH"/>
+                            <constraint firstItem="IeA-jQ-AIf" firstAttribute="top" secondItem="YHc-X2-Xzm" secondAttribute="bottom" id="M7H-bt-sw4"/>
                             <constraint firstItem="IeA-jQ-AIf" firstAttribute="centerX" secondItem="zPc-gk-jlo" secondAttribute="centerX" id="NCR-gf-TgL"/>
-                            <constraint firstItem="IeA-jQ-AIf" firstAttribute="leading" secondItem="Hsi-TQ-KtN" secondAttribute="leadingMargin" id="Rir-ZB-cJV"/>
+                            <constraint firstItem="IeA-jQ-AIf" firstAttribute="leading" secondItem="Hsi-TQ-KtN" secondAttribute="leading" id="Rir-ZB-cJV"/>
+                            <constraint firstItem="RSk-yS-sdF" firstAttribute="height" secondItem="IeA-jQ-AIf" secondAttribute="height" id="cbA-ZP-51p"/>
+                            <constraint firstItem="RSk-yS-sdF" firstAttribute="width" secondItem="IeA-jQ-AIf" secondAttribute="width" id="g5I-4j-4Gp"/>
                             <constraint firstItem="zPc-gk-jlo" firstAttribute="leading" secondItem="Hsi-TQ-KtN" secondAttribute="leadingMargin" id="ga0-Ma-kyQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zPc-gk-jlo" secondAttribute="trailing" id="iwb-3R-2uN"/>
+                            <constraint firstItem="IeA-jQ-AIf" firstAttribute="top" secondItem="YHc-X2-Xzm" secondAttribute="bottom" id="l5K-vn-Ae0"/>
                             <constraint firstItem="VLJ-1d-bkS" firstAttribute="top" secondItem="zPc-gk-jlo" secondAttribute="bottom" constant="248" id="nZo-Pk-h4t"/>
+                            <constraint firstItem="VLJ-1d-bkS" firstAttribute="top" secondItem="RSk-yS-sdF" secondAttribute="bottom" id="pfJ-4l-Baz"/>
+                            <constraint firstItem="RSk-yS-sdF" firstAttribute="centerX" secondItem="IeA-jQ-AIf" secondAttribute="centerX" id="pyX-Qh-iuu"/>
+                            <constraint firstItem="RSk-yS-sdF" firstAttribute="centerY" secondItem="IeA-jQ-AIf" secondAttribute="centerY" id="ugI-3Q-XdP"/>
                             <constraint firstAttribute="centerY" secondItem="zPc-gk-jlo" secondAttribute="centerY" id="unC-iJ-0d9"/>
                             <constraint firstItem="IeA-jQ-AIf" firstAttribute="centerY" secondItem="zPc-gk-jlo" secondAttribute="centerY" id="xPd-e8-uRA"/>
+                            <constraint firstAttribute="trailing" secondItem="RSk-yS-sdF" secondAttribute="trailing" id="y0g-n3-ElF"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="6Tx-x2-azJ"/>
+                                <exclude reference="82Z-iH-044"/>
+                                <exclude reference="I4D-j4-cgP"/>
                                 <exclude reference="IwD-rC-oWH"/>
+                                <exclude reference="M7H-bt-sw4"/>
                                 <exclude reference="NCR-gf-TgL"/>
+                                <exclude reference="Rir-ZB-cJV"/>
+                                <exclude reference="l5K-vn-Ae0"/>
                                 <exclude reference="xPd-e8-uRA"/>
                                 <exclude reference="unC-iJ-0d9"/>
                                 <exclude reference="nZo-Pk-h4t"/>
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Cards" image="icon_home" id="3gu-SQ-YXm" userLabel="My Cards"/>
+                    <navigationItem key="navigationItem" title="Exhale Flatiron June Contest" id="XRK-C9-WHo">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="U7b-Xm-1xo"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="reply" id="iVK-qg-a6H"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="centerLabel" destination="zPc-gk-jlo" id="IRP-Nc-Qnt"/>
                         <segue destination="qFc-M6-rmL" kind="popoverPresentation" identifier="Stamp" popoverAnchorView="zPc-gk-jlo" id="iha-hr-uV3">
@@ -63,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaS-dO-paf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16" y="2201"/>
+            <point key="canvasLocation" x="796" y="2201"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="lsS-Ds-bZE">
@@ -81,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fp6-S3-RW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="800" y="2201"/>
+            <point key="canvasLocation" x="1612" y="2201"/>
         </scene>
         <!--Punch It-->
         <scene sceneID="Irr-UK-5UR">
@@ -223,13 +246,32 @@
                     </tabBar>
                     <connections>
                         <segue destination="9VW-an-shx" kind="relationship" relationship="viewControllers" id="qVz-fH-Cpe"/>
-                        <segue destination="scX-uQ-9NJ" kind="relationship" relationship="viewControllers" id="dCQ-rN-002"/>
+                        <segue destination="9nJ-kH-uRW" kind="relationship" relationship="viewControllers" id="dCQ-rN-002"/>
                         <segue destination="l5G-uM-TgZ" kind="relationship" relationship="viewControllers" id="1Wb-vZ-SWF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wnu-ul-MBx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1130" y="1406"/>
+        </scene>
+        <!--My Cards-->
+        <scene sceneID="pZk-Wr-ZWr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9nJ-kH-uRW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Cards" image="icon_home" id="3gu-SQ-YXm" userLabel="My Cards"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZIf-fq-w3O">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="scX-uQ-9NJ" kind="relationship" relationship="rootViewController" id="9J2-2q-qcg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M0S-EU-gxh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-16" y="2201"/>
         </scene>
     </scenes>
     <resources>
