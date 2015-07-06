@@ -8,6 +8,17 @@
 
 import UIKit
 
-class CoreExtensions: NSObject {
-   
+extension UIStoryboardSegue
+{
+    
+    // MARK: - Properties
+    
+    var displayController: UIViewController {
+        if let navController = destinationViewController as? UINavigationController {
+            return navController.visibleViewController
+        }
+        
+        return destinationViewController as! UIViewController
+    }
+    
 }
