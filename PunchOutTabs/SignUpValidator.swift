@@ -22,8 +22,10 @@ public class SignUpValidator
     public static let Username = "Username"
     public static let Password = "Password"
     public static let Email = "Email"
+    
+    public typealias ValidatorResult = (valid: Bool, errorSection: String?, errorMessage: String?)
 
-    public static func validate(#username: String, password: String, email: String) -> (valid: Bool, errorSection: String?, errorMessage: String?) {
+    public static func validate(#username: String, password: String, email: String) -> ValidatorResult {
 
         // uesrname must be of appropriate length and contents
         if count(username) < Constants.UsernameMinLength || count(username) > Constants.UsernameMaxLength {
@@ -39,11 +41,16 @@ public class SignUpValidator
             return (false, Password, "Password must be at least \(Constants.PasswordMinLength) characters")
         }
         
+        return SignUpValidator.validateEmail(email)
+    }
+    
+    public static func validateEmail(email: String) -> ValidatorResult {
+        
         // email address must match the regex
         if email.rangeOfString(Constants.EmailAddressRegex, options: .RegularExpressionSearch) == nil {
             return (false, Email, "Email address must be valid")
         }
-
+        
         return (true, nil, nil)
     }
 }

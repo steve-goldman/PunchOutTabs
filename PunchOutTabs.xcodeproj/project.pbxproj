@@ -45,6 +45,9 @@
 		AA8906E11B3BC67F00A42646 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8906E01B3BC67F00A42646 /* LeaderboardTableViewCell.swift */; };
 		AA8906E31B3BC8C600A42646 /* LeaderboardElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8906E21B3BC8C600A42646 /* LeaderboardElement.swift */; };
 		AA8A25041B471256009C1562 /* MyLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8A25031B471256009C1562 /* MyLogInViewController.swift */; };
+		AA8CFCE91B4A089800DFF5BF /* MySignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CFCE81B4A089800DFF5BF /* MySignUpViewController.swift */; };
+		AA8CFCEB1B4A1A1500DFF5BF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CFCEA1B4A1A1500DFF5BF /* User.swift */; };
+		AA8CFCED1B4A332E00DFF5BF /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CFCEC1B4A332E00DFF5BF /* ForgotPasswordViewController.swift */; };
 		AA9B511A1B43AADC007E95EF /* ClassesDataSourceParseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9B51191B43AADC007E95EF /* ClassesDataSourceParseImpl.swift */; };
 		AA9B511C1B43B0CA007E95EF /* ClassesDataSourceParseImplTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9B511B1B43B0CA007E95EF /* ClassesDataSourceParseImplTest.swift */; };
 		AADC0E5D1B43A2CC00C0F92C /* Gyms.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC0E5C1B43A2CC00C0F92C /* Gyms.swift */; };
@@ -106,6 +109,9 @@
 		AA8906E01B3BC67F00A42646 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
 		AA8906E21B3BC8C600A42646 /* LeaderboardElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardElement.swift; sourceTree = "<group>"; };
 		AA8A25031B471256009C1562 /* MyLogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLogInViewController.swift; sourceTree = "<group>"; };
+		AA8CFCE81B4A089800DFF5BF /* MySignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySignUpViewController.swift; sourceTree = "<group>"; };
+		AA8CFCEA1B4A1A1500DFF5BF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AA8CFCEC1B4A332E00DFF5BF /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordViewController.swift; path = ../ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		AA9B51191B43AADC007E95EF /* ClassesDataSourceParseImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesDataSourceParseImpl.swift; sourceTree = "<group>"; };
 		AA9B511B1B43B0CA007E95EF /* ClassesDataSourceParseImplTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesDataSourceParseImplTest.swift; sourceTree = "<group>"; };
 		AADC0E5C1B43A2CC00C0F92C /* Gyms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gyms.swift; sourceTree = "<group>"; };
@@ -193,9 +199,11 @@
 		AA2974321B40BCD2008C7FBD /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				AA8CFCEC1B4A332E00DFF5BF /* ForgotPasswordViewController.swift */,
 				AA2974281B40B117008C7FBD /* MustLoginTabBarController.swift */,
 				AA2974331B40BCEE008C7FBD /* SignUpValidator.swift */,
 				AA8A25031B471256009C1562 /* MyLogInViewController.swift */,
+				AA8CFCE81B4A089800DFF5BF /* MySignUpViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -295,6 +303,7 @@
 				AADC0E601B43A3E100C0F92C /* ParseDataSource.swift */,
 				AADC0E651B43A99700C0F92C /* Classes.swift */,
 				AA9B51191B43AADC007E95EF /* ClassesDataSourceParseImpl.swift */,
+				AA8CFCEA1B4A1A1500DFF5BF /* User.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -413,9 +422,11 @@
 				AA8906DB1B3BC27E00A42646 /* LeaderboardViewController.swift in Sources */,
 				AA2974051B3CF31D008C7FBD /* UserDefaultsCardDataSource.swift in Sources */,
 				AA2974291B40B117008C7FBD /* MustLoginTabBarController.swift in Sources */,
+				AA8CFCE91B4A089800DFF5BF /* MySignUpViewController.swift in Sources */,
 				AA8906E31B3BC8C600A42646 /* LeaderboardElement.swift in Sources */,
 				AA2973F81B3C55CE008C7FBD /* SettingsViewController.swift in Sources */,
 				AA8906DF1B3BC3B200A42646 /* DummyLeaderboardDataSource.swift in Sources */,
+				AA8CFCED1B4A332E00DFF5BF /* ForgotPasswordViewController.swift in Sources */,
 				AA9B511A1B43AADC007E95EF /* ClassesDataSourceParseImpl.swift in Sources */,
 				AA2973FB1B3C5C79008C7FBD /* CardViewController.swift in Sources */,
 				AA8906E11B3BC67F00A42646 /* LeaderboardTableViewCell.swift in Sources */,
@@ -430,6 +441,7 @@
 				AA2974071B3E0364008C7FBD /* CardBoxView.swift in Sources */,
 				AADC0E5F1B43A36700C0F92C /* GymsDataSourceParseImpl.swift in Sources */,
 				AA8906BB1B3BB61300A42646 /* AppDelegate.swift in Sources */,
+				AA8CFCEB1B4A1A1500DFF5BF /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

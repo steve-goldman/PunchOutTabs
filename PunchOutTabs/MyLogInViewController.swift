@@ -11,10 +11,24 @@ import Parse
 
 class MyLogInViewController: UIViewController
 {
+    
+    // MARK: - Constants
+    
+    private struct SegueIdentifier
+    {
+        static let LoggedIn = "Logged In"
+    }
+    
+    // MARK: - Properties
+    
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    var alertView: UIAlertView?
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -22,10 +36,20 @@ class MyLogInViewController: UIViewController
         activityIndicator.hidesWhenStopped = true
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if alertView != nil {
+            alertView!.show()
+            alertView = nil
+        }
+    }
+    
+    // MARK: - Actions
+    
     @IBAction func loginPressed()
     {
-        let username = usernameField.text!
-        let password = passwordField.text!
+        let username = usernameField.text
+        let password = passwordField.text
         
         if count(username) == 0 || count(password) == 0 {
             UIAlertView(title: "Missing information", message: "Must supply username and password", delegate: nil, cancelButtonTitle: "Got it").show()
@@ -34,7 +58,7 @@ class MyLogInViewController: UIViewController
             PFUser.logInWithUsernameInBackground(username, password: password) { (user, error) in
                 self.activityIndicator.stopAnimating()
                 if user != nil {
-                    self.performSegueWithIdentifier("LoggedIn", sender: nil)
+                    self.performSegueWithIdentifier(SegueIdentifier.LoggedIn, sender: nil)
                 } else {
                     UIAlertView(title: "Could not log in", message: "Something went wrong: \(error?.localizedDescription)", delegate: nil, cancelButtonTitle: "Got it").show()
                 }
@@ -42,17 +66,10 @@ class MyLogInViewController: UIViewController
         }
     }
     
-    
-    @IBAction func forgotPasswordPressed() {
-        
-    }
-    
-    @IBAction func signUpButtonPressed() {
-        
-    }
+    // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "LoggedIn" {
+        if segue.identifier == SegueIdentifier.LoggedIn {
             // TODO: anything here?
         }
     }
