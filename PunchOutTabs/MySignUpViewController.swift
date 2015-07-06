@@ -20,10 +20,25 @@ class MySignUpViewController: UIViewController
     
     // MARK: - Properties
     
-    @IBOutlet weak var usernameField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var usernameField: UITextField! {
+        didSet {
+            usernameField.becomeFirstResponder()
+        }
+    }
+    
+    @IBOutlet weak var passwordField: UITextField! {
+        didSet {
+            passwordField.secureTextEntry = true
+        }
+    }
+    
     @IBOutlet weak var emailAddressField: UITextField!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView! {
+        didSet {
+            activityIndicator.hidesWhenStopped = true
+        }
+    }
     
     private var controllerViewStyle: ControllerViewStyle!
     
@@ -32,15 +47,11 @@ class MySignUpViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        passwordField.secureTextEntry = true
-        activityIndicator.hidesWhenStopped = true
-        usernameField.becomeFirstResponder()
         controllerViewStyle = ControllerViewStyle(viewController: self, params: ControllerViewStyle.SignUpParams)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         controllerViewStyle.layoutViews()
     }
     
@@ -68,11 +79,11 @@ class MySignUpViewController: UIViewController
                         if user != nil {
                             self.performSegueWithIdentifier(SegueIdentifier.SignedUp, sender: nil)
                         } else {
-                            UIAlertView(title: "Could not log in", message: "Something went wrong: \(error?.localizedDescription)", delegate: nil, cancelButtonTitle: "Got it").show()
+                            UIAlertView(title: "Could not log in", message: "Something went wrong: \(error!.localizedDescription)", delegate: nil, cancelButtonTitle: "Got it").show()
                         }
                     }
                 } else {
-                    UIAlertView(title: "Could not sign up", message: "Something went wrong: \(error?.localizedDescription)", delegate: nil, cancelButtonTitle: "Got it").show()
+                    UIAlertView(title: "Could not sign up", message: "Something went wrong: \(error!.localizedDescription)", delegate: nil, cancelButtonTitle: "Got it").show()
                 }
             }
         } else {

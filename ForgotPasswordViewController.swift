@@ -20,8 +20,17 @@ class ForgotPasswordViewController: UIViewController
     
     // MARK: - Properties
     
-    @IBOutlet weak var emailAddressField: UITextField!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var emailAddressField: UITextField! {
+        didSet {
+            emailAddressField.becomeFirstResponder()
+        }
+    }
+
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView! {
+        didSet {
+            activityIndicator.hidesWhenStopped = true
+        }
+    }
     
     private var controllerViewStyle: ControllerViewStyle!
     
@@ -30,7 +39,6 @@ class ForgotPasswordViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        activityIndicator.hidesWhenStopped = true
         controllerViewStyle = ControllerViewStyle(viewController: self, params: ControllerViewStyle.ForgotPasswordParams)
     }
     
@@ -53,7 +61,7 @@ class ForgotPasswordViewController: UIViewController
                 if success {
                     self.performSegueWithIdentifier(SegueIdentifier.PasswordRequested, sender: nil)
                 } else {
-                    UIAlertView(title: "Could not request new password", message: "Something went wrong: \(error?.localizedDescription)", delegate: nil, cancelButtonTitle: "Got it").show()
+                    UIAlertView(title: "Could not request new password", message: "Something went wrong: \(error!.localizedDescription)", delegate: nil, cancelButtonTitle: "Got it").show()
                 }
             }
         } else {

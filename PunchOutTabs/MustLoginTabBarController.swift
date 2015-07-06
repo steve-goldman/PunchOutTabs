@@ -27,8 +27,8 @@ class MustLoginTabBarController: UITabBarController
     
     // MARK: - Lifecycle
     
-    override func viewDidAppear(animated: Bool)
-    {
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         if let user = PFUser.currentUser() {
             if alertView != nil {
                 alertView!.show()

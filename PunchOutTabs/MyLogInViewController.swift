@@ -21,9 +21,23 @@ class MyLogInViewController: UIViewController
     
     // MARK: - Properties
     
-    @IBOutlet weak var usernameField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var usernameField: UITextField! {
+        didSet {
+            usernameField.becomeFirstResponder()
+        }
+    }
+
+    @IBOutlet weak var passwordField: UITextField! {
+        didSet {
+            passwordField.secureTextEntry = true
+        }
+    }
+
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView! {
+        didSet {
+            activityIndicator.hidesWhenStopped = true
+        }
+    }
     
     private var controllerViewStyle: ControllerViewStyle!
     
@@ -34,9 +48,6 @@ class MyLogInViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        passwordField.secureTextEntry = true
-        activityIndicator.hidesWhenStopped = true
-        usernameField.becomeFirstResponder()
         controllerViewStyle = ControllerViewStyle(viewController: self, params: ControllerViewStyle.LoginParams)
     }
     
@@ -69,7 +80,7 @@ class MyLogInViewController: UIViewController
                 if user != nil {
                     self.performSegueWithIdentifier(SegueIdentifier.LoggedIn, sender: nil)
                 } else {
-                    UIAlertView(title: "Could not log in", message: "Something went wrong: \(error?.localizedDescription)", delegate: nil, cancelButtonTitle: "Got it").show()
+                    UIAlertView(title: "Could not log in", message: "Something went wrong: \(error!.localizedDescription)", delegate: nil, cancelButtonTitle: "Got it").show()
                 }
             }
         }
