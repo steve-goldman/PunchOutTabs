@@ -11,28 +11,20 @@ import UIKit
 import Parse
 import ParseUI
 
-class MustLoginTabBarController: UITabBarController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate
+class MustLoginTabBarController: UITabBarController
 {
     
-    
     override func viewDidAppear(animated: Bool) {
-
-        // if not logged in, show the login/signup screen
+        // if not logged in, show the login screen
         if PFUser.currentUser() == nil {
-            
-            // the login view controller
-            var logInViewController = MyLogInViewController()
-            logInViewController.delegate = self
-            
-            // the signup view controller
-            var signUpViewController = PFSignUpViewController()
-            signUpViewController.delegate = self
-            
-            // connect signup to login
-            logInViewController.signUpController = signUpViewController
-            
-            // present login
-            self.presentViewController(logInViewController, animated: animated, completion: nil)
+            // present login controller
+            performSegueWithIdentifier("Login", sender: nil)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Login" {
+            // TODO: anything to do here?
         }
     }
     

@@ -7,25 +7,53 @@
 //
 
 import UIKit
-import ParseUI
+import Parse
 
-class MyLogInViewController: PFLogInViewController
+class MyLogInViewController: UIViewController
 {
-
-    override func viewDidLoad() {
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        
-        // for now, you have to sign in to do anything, so there's no way to
-        // dismiss this screen
-        logInView?.dismissButton?.hidden = true
-        
-        var logoView = UIImageView(image: UIImage(named: "punchy_logo"))
-        logoView.contentMode = UIViewContentMode.ScaleAspectFit
-        
-        logInView?.logo = logoView
+        passwordField.secureTextEntry = true
+        activityIndicator.hidesWhenStopped = true
     }
     
-    override func viewDidLayoutSubviews() {
-        logInView?.logo?.frame.origin.y = 100
+    @IBAction func loginPressed()
+    {
+        let username = usernameField.text!
+        let password = passwordField.text!
+        
+        if count(username) == 0 || count(password) == 0 {
+            UIAlertView(title: "Missing information", message: "Must supply username and password", delegate: nil, cancelButtonTitle: "Got it").show()
+        } else {
+            activityIndicator.startAnimating()
+            PFUser.logInWithUsernameInBackground(username, password: password) { (user, error) in
+                self.activityIndicator.stopAnimating()
+                if user != nil {
+                    self.performSegueWithIdentifier("LoggedIn", sender: nil)
+                } else {
+                    UIAlertView(title: "Could not log in", message: "Something went wrong: \(error?.localizedDescription)", delegate: nil, cancelButtonTitle: "Got it").show()
+                }
+            }
+        }
+    }
+    
+    
+    @IBAction func forgotPasswordPressed() {
+        
+    }
+    
+    @IBAction func signUpButtonPressed() {
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "LoggedIn" {
+            // TODO: anything here?
+        }
     }
 }
