@@ -153,9 +153,47 @@
                     <view key="view" contentMode="scaleToFill" id="VGw-Q1-rDG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged in as " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8w-Pa-b3z">
+                                <rect key="frame" x="250" y="28" width="101" height="19.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="v45-Uf-Lgk">
+                                <rect key="frame" x="240" y="60" width="20" height="20"/>
+                                <color key="color" cocoaTouchSystemColor="lightTextColor"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CN-Mr-cwQ">
+                                <rect key="frame" x="232" y="55" width="137" height="30"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="137" id="xAt-iw-7dx"/>
+                                </constraints>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutPressed" destination="l5G-uM-TgZ" eventType="touchUpInside" id="eIY-xI-Gr2"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8CN-Mr-cwQ" firstAttribute="centerX" secondItem="w8w-Pa-b3z" secondAttribute="centerX" id="7BF-tw-vjC"/>
+                            <constraint firstItem="8CN-Mr-cwQ" firstAttribute="centerY" secondItem="v45-Uf-Lgk" secondAttribute="centerY" id="AYu-Ks-It3"/>
+                            <constraint firstItem="v45-Uf-Lgk" firstAttribute="leading" secondItem="8CN-Mr-cwQ" secondAttribute="leading" constant="8" id="MEv-pk-P9m"/>
+                            <constraint firstItem="8CN-Mr-cwQ" firstAttribute="top" secondItem="w8w-Pa-b3z" secondAttribute="bottom" constant="8" symbolic="YES" id="N4h-yb-y6N"/>
+                            <constraint firstAttribute="centerX" secondItem="w8w-Pa-b3z" secondAttribute="centerX" id="st6-uX-Tdr"/>
+                            <constraint firstItem="w8w-Pa-b3z" firstAttribute="top" secondItem="AaL-Vj-jVu" secondAttribute="bottom" constant="8" symbolic="YES" id="tij-Jp-BN9"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="icon_settings" id="BYc-30-EWN"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="v45-Uf-Lgk" id="Yhl-QC-wkb"/>
+                        <outlet property="loggedInAsField" destination="w8w-Pa-b3z" id="WFE-lu-B98"/>
+                        <segue destination="UG2-G7-J9q" kind="show" identifier="Logged Out" id="FoG-1l-05e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ncW-ON-7Cj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -563,7 +601,7 @@
         <image name="icon_star" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="do6-aV-VD9"/>
-        <segue reference="MSn-iN-mQg"/>
+        <segue reference="FoG-1l-05e"/>
+        <segue reference="ukh-Ve-96K"/>
     </inferredMetricsTieBreakers>
 </document>

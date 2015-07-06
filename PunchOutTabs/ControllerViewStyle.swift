@@ -39,6 +39,7 @@ public class ControllerViewStyle
     public static let SignUpParams = ControllerViewStyleParams(backgroundImageName: "bg_smiling")
     public static let ForgotPasswordParams = ControllerViewStyleParams(backgroundImageName: "bg_upright")
     public static let PunchItParams = ControllerViewStyleParams(backgroundImageName: "bg_upright2")
+    public static let SettingsParams = ControllerViewStyleParams(backgroundImageName: "bg_upright")
     
     // MARK: - Properties
     
