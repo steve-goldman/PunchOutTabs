@@ -34,6 +34,7 @@ class MyLogInViewController: UIViewController
         super.viewDidLoad()
         passwordField.secureTextEntry = true
         activityIndicator.hidesWhenStopped = true
+        usernameField.becomeFirstResponder()
     }
     
     override func viewWillAppear(animated: Bool) {

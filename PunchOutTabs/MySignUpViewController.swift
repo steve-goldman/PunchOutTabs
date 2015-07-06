@@ -32,6 +32,7 @@ class MySignUpViewController: UIViewController
         super.viewDidLoad()
         passwordField.secureTextEntry = true
         activityIndicator.hidesWhenStopped = true
+        usernameField.becomeFirstResponder()
     }
     
     // MARK: - Actions
