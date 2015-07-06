@@ -69,7 +69,6 @@ public class ControllerViewStyle
     
     func layoutViews() {
         if backgroundImageView != nil {
-            println(viewController.bottomLayoutGuide.length)
             backgroundImageView!.frame = CGRectMake(0, viewController.topLayoutGuide.length, viewController.view.frame.width, viewController.view.frame.height - viewController.bottomLayoutGuide.length - viewController.topLayoutGuide.length)
         }
     }
