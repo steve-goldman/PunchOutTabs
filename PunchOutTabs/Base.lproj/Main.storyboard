@@ -91,7 +91,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue_star" translatesAutoresizingMaskIntoConstraints="NO" id="qSD-oF-Vko" userLabel="Star Image">
-                                <rect key="frame" x="54.5" y="44" width="491" height="491"/>
+                                <rect key="frame" x="65" y="65" width="470" height="470"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qSD-oF-Vko" secondAttribute="height" multiplier="1:1" id="8xB-8O-YNx"/>
                                 </constraints>
@@ -106,7 +106,7 @@
                             <constraint firstItem="35E-Xm-AUK" firstAttribute="top" secondItem="qSD-oF-Vko" secondAttribute="bottom" constant="8" symbolic="YES" id="Hf8-Uk-8rQ"/>
                             <constraint firstItem="qSD-oF-Vko" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fHM-mz-HCT" secondAttribute="leading" constant="24" id="HxH-co-zZG"/>
                             <constraint firstItem="35E-Xm-AUK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fHM-mz-HCT" secondAttribute="leadingMargin" id="RjV-N2-QVW"/>
-                            <constraint firstAttribute="centerY" secondItem="qSD-oF-Vko" secondAttribute="centerY" constant="10.5" id="WXb-eP-YEG"/>
+                            <constraint firstAttribute="centerY" secondItem="qSD-oF-Vko" secondAttribute="centerY" id="WXb-eP-YEG"/>
                             <constraint firstItem="k6h-mk-cpS" firstAttribute="top" secondItem="35E-Xm-AUK" secondAttribute="bottom" constant="8" symbolic="YES" id="Wha-NN-LiJ"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="qSD-oF-Vko" secondAttribute="trailing" constant="24" id="bRG-pT-Gwl"/>
                             <constraint firstItem="qSD-oF-Vko" firstAttribute="top" secondItem="35E-Xm-AUK" secondAttribute="bottom" constant="57.5" id="dM7-ov-IBv"/>
