@@ -23,12 +23,20 @@ class ForgotPasswordViewController: UIViewController
     @IBOutlet weak var emailAddressField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    private var controllerViewStyle: ControllerViewStyle!
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         activityIndicator.hidesWhenStopped = true
+        controllerViewStyle = ControllerViewStyle(viewController: self, params: ControllerViewStyle.ForgotPasswordParams)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        controllerViewStyle.layoutViews()
     }
     
     // MARK: - Actions

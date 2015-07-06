@@ -76,7 +76,7 @@
         <!--Punch It-->
         <scene sceneID="Irr-UK-5UR">
             <objects>
-                <viewController id="9VW-an-shx" sceneMemberID="viewController">
+                <viewController id="9VW-an-shx" customClass="PunchItViewController" customModule="PunchOutTabs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZV3-Wf-Ssa"/>
                         <viewControllerLayoutGuide type="bottom" id="k6h-mk-cpS"/>

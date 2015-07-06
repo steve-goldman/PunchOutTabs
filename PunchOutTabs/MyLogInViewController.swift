@@ -25,6 +25,8 @@ class MyLogInViewController: UIViewController
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    private var controllerViewStyle: ControllerViewStyle!
+    
     var alertView: UIAlertView?
     
     // MARK: - Lifecycle
@@ -35,6 +37,12 @@ class MyLogInViewController: UIViewController
         passwordField.secureTextEntry = true
         activityIndicator.hidesWhenStopped = true
         usernameField.becomeFirstResponder()
+        controllerViewStyle = ControllerViewStyle(viewController: self, params: ControllerViewStyle.LoginParams)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        controllerViewStyle.layoutViews()
     }
     
     override func viewWillAppear(animated: Bool) {
