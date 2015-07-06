@@ -1,0 +1,17 @@
+{
+  "global": {
+    "parseVersion": "1.4.2"
+  },
+  "applications": {
+    "CloudCode": {
+      "link": "Punchy"
+    },
+    "Punchy": {
+      "applicationId": "UkjUmO4L4itkJiSHgK3d9YgLxExsjbMCG8xWwYXl",
+      "masterKey": "zNwVJFODUkMx3KTTAC1UGsHWHOsryRmTy1hBuWXG"
+    },
+    "_default": {
+      "link": "Punchy"
+    }
+  }
+}
