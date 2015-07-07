@@ -14,6 +14,20 @@ exports.nameOfNewCardPressed = function(request, response) {
     // create a new card template and save it
     var CardTemplate = Parse.Object.extend("CardTemplate");
     var cardTemplate = new CardTemplate();
+
+    // helper will be used in promise callbacks below
+    associateCardTemplateWithUser = function(cardTemplate, response) {
+        Parse.User.current().set("pendingNewCard", cardTemplate);
+        Parse.User.current().save(null, {
+            success: function(user) {
+                response.success(true);
+            },
+            error: function(user, error) {
+                response.error("Could not associate card template with user due to: " + error);
+            }
+        });
+    }
+
     cardTemplate.save({
         name: request.params.name,
         isActive: false
@@ -40,19 +54,6 @@ exports.nameOfNewCardPressed = function(request, response) {
         },
         error: function(cardTemplate, error) {
             response.error("Could not save card template due to: " + error);
-        }
-    });
-}
-
-// helper method to previous
-associateCardTemplateWithUser = function(cardTemplate, response) {
-    Parse.User.current().set("pendingNewCard", cardTemplate);
-    Parse.User.current().save(null, {
-        success: function(user) {
-            response.success(true);
-        },
-        error: function(user, error) {
-            response.error("Could not associate card template with user due to: " + error);
         }
     });
 }
