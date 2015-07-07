@@ -95,17 +95,29 @@ class TypeCountsNewCardViewController: UIViewController, UIPickerViewDataSource,
         // validate
         let result = CardTemplateValidator.validate(pendingCard)
         if result.valid {
+            // activate the card template
             PFUser.currentUser()!.pendingNewCard = CardTemplate.createAsActive(pendingCard)
             doneActivityIndicator.startAnimating()
             PFUser.currentUser()!.pendingNewCard!.saveInBackgroundWithBlock { (success, error) in
                 self.doneActivityIndicator.stopAnimating()
                 if success {
-                    PFUser.currentUser()!.pendingNewCard = nil
+                    // create a card instance for this user and template
+                    let cardInstance = CardInstance.create(user: PFUser.currentUser()!, cardTemplate: PFUser.currentUser()!.pendingNewCard!)
                     self.doneActivityIndicator.startAnimating()
-                    PFUser.currentUser()!.saveInBackgroundWithBlock { (success, error) in
+                    cardInstance.saveInBackgroundWithBlock { (success, error) in
                         self.doneActivityIndicator.stopAnimating()
                         if success {
-                            self.performSegueWithIdentifier(SegueIdentifier.Done, sender: nil)
+                            // unset the card as pending for this user
+                            PFUser.currentUser()!.pendingNewCard = nil
+                            self.doneActivityIndicator.startAnimating()
+                            PFUser.currentUser()!.saveInBackgroundWithBlock { (success, error) in
+                                self.doneActivityIndicator.stopAnimating()
+                                if success {
+                                    self.performSegueWithIdentifier(SegueIdentifier.Done, sender: nil)
+                                } else {
+                                    UIAlertView(title: "Could not do done", message: "Something went wrong: \(error!.localizedDescription)", delegate: nil, cancelButtonTitle: "Got it").show()
+                                }
+                            }
                         } else {
                             UIAlertView(title: "Could not do done", message: "Something went wrong: \(error!.localizedDescription)", delegate: nil, cancelButtonTitle: "Got it").show()
                         }

@@ -26,7 +26,7 @@ public class CardTemplate: PFObject
     // MARK: - Static Initializers
     
     static func create(name: String) -> CardTemplate {
-        let cardTemplate = CardTemplate(className: CardTemplate.ClassName)
+        let cardTemplate = CardTemplate(className: self.ClassName)
         cardTemplate.setObject(name, forKey: Key.Name)
         cardTemplate.setObject(false, forKey: Key.IsActive)
         return cardTemplate
