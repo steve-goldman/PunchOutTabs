@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class MyLogInViewController: UIViewController
+class MyLogInViewController: UIViewController, UITextFieldDelegate
 {
     
     // MARK: - Constants
@@ -23,12 +23,14 @@ class MyLogInViewController: UIViewController
     
     @IBOutlet weak var usernameField: UITextField! {
         didSet {
+            usernameField.delegate = self
             usernameField.becomeFirstResponder()
         }
     }
 
     @IBOutlet weak var passwordField: UITextField! {
         didSet {
+            passwordField.delegate = self
             passwordField.secureTextEntry = true
         }
     }
@@ -92,5 +94,17 @@ class MyLogInViewController: UIViewController
         if segue.identifier == SegueIdentifier.LoggedIn {
             // TODO: anything here?
         }
+    }
+    
+    // MARK: - UITextFieldDelegate
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == usernameField {
+            passwordField.becomeFirstResponder()
+        } else if textField == passwordField {
+            passwordField.resignFirstResponder()
+            loginPressed()
+        }
+        return true
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class ForgotPasswordViewController: UIViewController
+class ForgotPasswordViewController: UIViewController, UITextFieldDelegate
 {
     // MARK: - Constants
     
@@ -22,6 +22,7 @@ class ForgotPasswordViewController: UIViewController
     
     @IBOutlet weak var emailAddressField: UITextField! {
         didSet {
+            emailAddressField.delegate = self
             emailAddressField.becomeFirstResponder()
         }
     }
@@ -77,6 +78,14 @@ class ForgotPasswordViewController: UIViewController
             let destinationController = segue.displayController as! MyLogInViewController
             destinationController.alertView = UIAlertView(title: "Password reset requested", message: "Please check your email for instructions on resetting your password", delegate: nil, cancelButtonTitle: "Continue")
         }
+    }
+    
+    // MARK: - UITextFieldDelegate
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        emailAddressField.resignFirstResponder()
+        resetPasswordPressed()
+        return true
     }
 
 }

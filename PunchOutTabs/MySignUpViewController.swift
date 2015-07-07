@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class MySignUpViewController: UIViewController
+class MySignUpViewController: UIViewController, UITextFieldDelegate
 {
     // MARK: - Constants
     
@@ -22,17 +22,23 @@ class MySignUpViewController: UIViewController
     
     @IBOutlet weak var usernameField: UITextField! {
         didSet {
+            usernameField.delegate = self
             usernameField.becomeFirstResponder()
         }
     }
     
     @IBOutlet weak var passwordField: UITextField! {
         didSet {
+            passwordField.delegate = self
             passwordField.secureTextEntry = true
         }
     }
     
-    @IBOutlet weak var emailAddressField: UITextField!
+    @IBOutlet weak var emailAddressField: UITextField! {
+        didSet {
+            emailAddressField.delegate = self
+        }
+    }
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView! {
         didSet {
@@ -100,4 +106,17 @@ class MySignUpViewController: UIViewController
         }
     }
 
+    // MARK: - UITextFieldDelegate
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == usernameField {
+            passwordField.becomeFirstResponder()
+        } else if textField == passwordField {
+            emailAddressField.becomeFirstResponder()
+        } else if textField == emailAddressField {
+            emailAddressField.resignFirstResponder()
+            signUpPressed()
+        }
+        return true
+    }
 }

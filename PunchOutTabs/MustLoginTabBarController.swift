@@ -42,6 +42,11 @@ class MustLoginTabBarController: UITabBarController
     
     // MARK: - Navigation
     
+    func selectMyCards() {
+        // TODO: keep in sync if we add/remove/reorder tabs
+        selectedIndex = 1
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == SegueIdentifier.LogIn {
             // TODO: anything to do here?

@@ -11,26 +11,46 @@ import Parse
 
 public extension PFUser
 {
-    private static let LastLoginKey = "lastLogin"
+    
+    // MARK: - Keys
+    
+    private struct Key
+    {
+        static let LastLogin = "lastLogin"
+        static let ForgotPasswordRequested = "forgotPasswordRequested"
+        static let PendingNewCard = "pendingNewCard"
+    }
+    
+    // MARK: - Properties
     
     public var lastLogin: NSDate? {
         get {
-            return objectForKey(PFUser.LastLoginKey) as? NSDate
+            return objectForKey(PFUser.Key.LastLogin) as? NSDate
         }
         set {
-            setObject(newValue!, forKey: PFUser.LastLoginKey)
+            setObject(newValue!, forKey: PFUser.Key.LastLogin)
         }
     }
     
-    
-    private static let ForgotPasswordRequestedKey = "forgotPasswordRequested"
-    
     public var forgotPasswordRequested: NSDate? {
         get {
-            return objectForKey(PFUser.ForgotPasswordRequestedKey) as? NSDate
+            return objectForKey(PFUser.Key.ForgotPasswordRequested) as? NSDate
         }
         set {
-            setObject(newValue!, forKey: PFUser.ForgotPasswordRequestedKey)
+            setObject(newValue!, forKey: PFUser.Key.ForgotPasswordRequested)
+        }
+    }
+    
+    public var pendingNewCard: CardTemplate? {
+        get {
+            return objectForKey(Key.PendingNewCard) as? CardTemplate
+        }
+        set {
+            if newValue != nil {
+                setObject(newValue!, forKey: Key.PendingNewCard)
+            } else {
+                removeObjectForKey(Key.PendingNewCard)
+            }
         }
     }
 }

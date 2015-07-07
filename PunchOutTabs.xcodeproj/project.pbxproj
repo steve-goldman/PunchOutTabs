@@ -51,6 +51,12 @@
 		AA8CFCF21B4ACB8800DFF5BF /* CoreExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CFCF11B4ACB8800DFF5BF /* CoreExtensions.swift */; };
 		AA8CFCF41B4ACCA700DFF5BF /* ControllerViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CFCF31B4ACCA700DFF5BF /* ControllerViewStyle.swift */; };
 		AA8CFCF71B4AD39E00DFF5BF /* PunchItViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CFCF61B4AD39E00DFF5BF /* PunchItViewController.swift */; };
+		AA8CFCF91B4B20DE00DFF5BF /* NameOfNewCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CFCF81B4B20DE00DFF5BF /* NameOfNewCardViewController.swift */; };
+		AA8CFCFB1B4B23D600DFF5BF /* TypeCountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CFCFA1B4B23D600DFF5BF /* TypeCountsTableViewCell.swift */; };
+		AA8CFCFE1B4B2B1100DFF5BF /* EndDateOfNewCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CFCFD1B4B2B1100DFF5BF /* EndDateOfNewCardViewController.swift */; };
+		AA8CFD001B4B2B3F00DFF5BF /* TypeCountsNewCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CFCFF1B4B2B3F00DFF5BF /* TypeCountsNewCardViewController.swift */; };
+		AA8CFD021B4B323700DFF5BF /* CardTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CFD011B4B323700DFF5BF /* CardTemplate.swift */; };
+		AA8CFD041B4B6B2800DFF5BF /* CardTemplateValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CFD031B4B6B2800DFF5BF /* CardTemplateValidator.swift */; };
 		AA9B511A1B43AADC007E95EF /* ClassesDataSourceParseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9B51191B43AADC007E95EF /* ClassesDataSourceParseImpl.swift */; };
 		AA9B511C1B43B0CA007E95EF /* ClassesDataSourceParseImplTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9B511B1B43B0CA007E95EF /* ClassesDataSourceParseImplTest.swift */; };
 		AADC0E5D1B43A2CC00C0F92C /* Gyms.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC0E5C1B43A2CC00C0F92C /* Gyms.swift */; };
@@ -118,6 +124,12 @@
 		AA8CFCF11B4ACB8800DFF5BF /* CoreExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreExtensions.swift; sourceTree = "<group>"; };
 		AA8CFCF31B4ACCA700DFF5BF /* ControllerViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerViewStyle.swift; sourceTree = "<group>"; };
 		AA8CFCF61B4AD39E00DFF5BF /* PunchItViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchItViewController.swift; sourceTree = "<group>"; };
+		AA8CFCF81B4B20DE00DFF5BF /* NameOfNewCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameOfNewCardViewController.swift; sourceTree = "<group>"; };
+		AA8CFCFA1B4B23D600DFF5BF /* TypeCountsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeCountsTableViewCell.swift; sourceTree = "<group>"; };
+		AA8CFCFD1B4B2B1100DFF5BF /* EndDateOfNewCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndDateOfNewCardViewController.swift; sourceTree = "<group>"; };
+		AA8CFCFF1B4B2B3F00DFF5BF /* TypeCountsNewCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeCountsNewCardViewController.swift; sourceTree = "<group>"; };
+		AA8CFD011B4B323700DFF5BF /* CardTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTemplate.swift; sourceTree = "<group>"; };
+		AA8CFD031B4B6B2800DFF5BF /* CardTemplateValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTemplateValidator.swift; sourceTree = "<group>"; };
 		AA9B51191B43AADC007E95EF /* ClassesDataSourceParseImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesDataSourceParseImpl.swift; sourceTree = "<group>"; };
 		AA9B511B1B43B0CA007E95EF /* ClassesDataSourceParseImplTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesDataSourceParseImplTest.swift; sourceTree = "<group>"; };
 		AADC0E5C1B43A2CC00C0F92C /* Gyms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gyms.swift; sourceTree = "<group>"; };
@@ -185,6 +197,7 @@
 		AA2973FC1B3C5C7D008C7FBD /* Card */ = {
 			isa = PBXGroup;
 			children = (
+				AA8CFCFC1B4B2AEB00DFF5BF /* New Card */,
 				AA2973FA1B3C5C79008C7FBD /* CardViewController.swift */,
 				AA2974001B3CF043008C7FBD /* CardDataSource.swift */,
 				AA2974041B3CF31D008C7FBD /* UserDefaultsCardDataSource.swift */,
@@ -312,6 +325,18 @@
 			name = PunchIt;
 			sourceTree = "<group>";
 		};
+		AA8CFCFC1B4B2AEB00DFF5BF /* New Card */ = {
+			isa = PBXGroup;
+			children = (
+				AA8CFCF81B4B20DE00DFF5BF /* NameOfNewCardViewController.swift */,
+				AA8CFCFD1B4B2B1100DFF5BF /* EndDateOfNewCardViewController.swift */,
+				AA8CFCFF1B4B2B3F00DFF5BF /* TypeCountsNewCardViewController.swift */,
+				AA8CFCFA1B4B23D600DFF5BF /* TypeCountsTableViewCell.swift */,
+				AA8CFD031B4B6B2800DFF5BF /* CardTemplateValidator.swift */,
+			);
+			name = "New Card";
+			sourceTree = "<group>";
+		};
 		AADC0E5B1B43A2B600C0F92C /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +346,7 @@
 				AADC0E651B43A99700C0F92C /* Classes.swift */,
 				AA9B51191B43AADC007E95EF /* ClassesDataSourceParseImpl.swift */,
 				AA8CFCEA1B4A1A1500DFF5BF /* User.swift */,
+				AA8CFD011B4B323700DFF5BF /* CardTemplate.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -438,24 +464,30 @@
 				AA8A25041B471256009C1562 /* MyLogInViewController.swift in Sources */,
 				AA8906DB1B3BC27E00A42646 /* LeaderboardViewController.swift in Sources */,
 				AA2974051B3CF31D008C7FBD /* UserDefaultsCardDataSource.swift in Sources */,
+				AA8CFD021B4B323700DFF5BF /* CardTemplate.swift in Sources */,
 				AA2974291B40B117008C7FBD /* MustLoginTabBarController.swift in Sources */,
 				AA8CFCE91B4A089800DFF5BF /* MySignUpViewController.swift in Sources */,
 				AA8906E31B3BC8C600A42646 /* LeaderboardElement.swift in Sources */,
 				AA2973F81B3C55CE008C7FBD /* SettingsViewController.swift in Sources */,
 				AA8906DF1B3BC3B200A42646 /* DummyLeaderboardDataSource.swift in Sources */,
+				AA8CFD001B4B2B3F00DFF5BF /* TypeCountsNewCardViewController.swift in Sources */,
 				AA8CFCED1B4A332E00DFF5BF /* ForgotPasswordViewController.swift in Sources */,
+				AA8CFCF91B4B20DE00DFF5BF /* NameOfNewCardViewController.swift in Sources */,
 				AA8CFCF71B4AD39E00DFF5BF /* PunchItViewController.swift in Sources */,
 				AA9B511A1B43AADC007E95EF /* ClassesDataSourceParseImpl.swift in Sources */,
 				AA2973FB1B3C5C79008C7FBD /* CardViewController.swift in Sources */,
 				AA8906E11B3BC67F00A42646 /* LeaderboardTableViewCell.swift in Sources */,
 				AA2974341B40BCEE008C7FBD /* SignUpValidator.swift in Sources */,
 				AA2974011B3CF043008C7FBD /* CardDataSource.swift in Sources */,
+				AA8CFCFE1B4B2B1100DFF5BF /* EndDateOfNewCardViewController.swift in Sources */,
 				AA8CFCF41B4ACCA700DFF5BF /* ControllerViewStyle.swift in Sources */,
 				AA29740D1B3F6D8B008C7FBD /* CardBoxViewManager.swift in Sources */,
 				AADC0E5D1B43A2CC00C0F92C /* Gyms.swift in Sources */,
+				AA8CFD041B4B6B2800DFF5BF /* CardTemplateValidator.swift in Sources */,
 				AADC0E661B43A99700C0F92C /* Classes.swift in Sources */,
 				AADC0E611B43A3E100C0F92C /* ParseDataSource.swift in Sources */,
 				AA8CFCF21B4ACB8800DFF5BF /* CoreExtensions.swift in Sources */,
+				AA8CFCFB1B4B23D600DFF5BF /* TypeCountsTableViewCell.swift in Sources */,
 				AA8906DD1B3BC2A900A42646 /* LeaderboardDataSource.swift in Sources */,
 				AA2973FE1B3C5CC4008C7FBD /* RulesInfoViewController.swift in Sources */,
 				AA2974071B3E0364008C7FBD /* CardBoxView.swift in Sources */,

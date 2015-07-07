@@ -50,11 +50,4 @@ class CardViewController: UIViewController {
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        switch segue.identifier! {
-            case "Stamp": fallthrough
-            default: break
-        }
-    }
-    
 }
