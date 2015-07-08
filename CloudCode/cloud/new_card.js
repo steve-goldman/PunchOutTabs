@@ -9,6 +9,11 @@ exports.validateName = function(request, response) {
     const NAME_MAX_LENGTH = 32;
 
     const name = request.object.get("name")
+
+    if (name == null) {
+        response.error("Name is null!");
+        return;
+    }
     
     if (name.length < NAME_MIN_LENGTH || name.length > NAME_MAX_LENGTH) {
         response.error("Name must be between " + NAME_MIN_LENGTH + " and " + NAME_MAX_LENGTH + " characters");
