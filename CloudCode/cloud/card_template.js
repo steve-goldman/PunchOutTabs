@@ -3,7 +3,7 @@
 //
 
 // validate the name of a card
-exports.validateName = function(request, response) {
+exports.validate = function(request, response) {
     // name is required
     const NAME_MIN_LENGTH = 4;
     const NAME_MAX_LENGTH = 32;
