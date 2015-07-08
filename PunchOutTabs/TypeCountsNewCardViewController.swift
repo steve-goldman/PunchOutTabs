@@ -64,72 +64,27 @@ class TypeCountsNewCardViewController: UIViewController, UIPickerViewDataSource,
     
     @IBAction func addPressed()
     {
-        let type = CardTemplate.ClassTypes[classTypePicker.selectedRowInComponent(0)]
-        let count = howManyClassesField.text!.toInt() ?? 0
-        
-        let pendingCard = PFUser.currentUser()!.pendingNewCard!
-        
-        // validate the new constraint
-        let result = CardTemplateValidator.validate(pendingCard, type: type, count: count)
-        if result.valid {
-            // set the end date
-
-            PFUser.currentUser()!.pendingNewCard = CardTemplate.createWithTypeCount(pendingCard, type: type, count: count)
-            addActivityIndicator.startAnimating()
-            PFUser.currentUser()!.pendingNewCard!.saveInBackgroundWithBlock { (success, error) in
-                self.addActivityIndicator.stopAnimating()
-                if success {
-                    self.tableView.reloadData()
-                } else {
-                    UIAlertView(title: "Could not add type count", message: "Something went wrong: \(error!.localizedDescription)", delegate: nil, cancelButtonTitle: "Got it").show()
-                }
-            }
-        } else {
-            UIAlertView(title: result.errorSection, message: result.errorMessage, delegate: nil, cancelButtonTitle: "Got it").show()
+        if let count = howManyClassesField.text!.toInt() {
+            let type = CardTemplate.ClassTypes[classTypePicker.selectedRowInComponent(0)]
+            addTypeCount(type: type, count: count)
         }
     }
     
     @IBAction func donePressed() {
-        let pendingCard = PFUser.currentUser()!.pendingNewCard!
-        
-        // validate
-        let result = CardTemplateValidator.validate(pendingCard)
-        if result.valid {
-            // activate the card template
-            PFUser.currentUser()!.pendingNewCard = CardTemplate.createAsActive(pendingCard)
-            doneActivityIndicator.startAnimating()
-            PFUser.currentUser()!.pendingNewCard!.saveInBackgroundWithBlock { (success, error) in
-                self.doneActivityIndicator.stopAnimating()
-                if success {
-                    // create a card instance for this user and template
-                    let cardInstance = CardInstance.create(user: PFUser.currentUser()!, cardTemplate: PFUser.currentUser()!.pendingNewCard!)
-                    self.doneActivityIndicator.startAnimating()
-                    cardInstance.saveInBackgroundWithBlock { (success, error) in
-                        self.doneActivityIndicator.stopAnimating()
-                        if success {
-                            // unset the card as pending for this user
-                            PFUser.currentUser()!.pendingNewCard = nil
-                            self.doneActivityIndicator.startAnimating()
-                            PFUser.currentUser()!.saveInBackgroundWithBlock { (success, error) in
-                                self.doneActivityIndicator.stopAnimating()
-                                if success {
-                                    self.performSegueWithIdentifier(SegueIdentifier.Done, sender: nil)
-                                } else {
-                                    UIAlertView(title: "Could not do done", message: "Something went wrong: \(error!.localizedDescription)", delegate: nil, cancelButtonTitle: "Got it").show()
-                                }
-                            }
-                        } else {
-                            UIAlertView(title: "Could not do done", message: "Something went wrong: \(error!.localizedDescription)", delegate: nil, cancelButtonTitle: "Got it").show()
-                        }
-                    }
-                } else {
-                    UIAlertView(title: "Could not do done", message: "Something went wrong: \(error!.localizedDescription)", delegate: nil, cancelButtonTitle: "Got it").show()
-                }
+        // activate the card template
+        let cardTemplate = PFUser.currentUser()!.pendingNewCard!
+        PFUser.currentUser()!.pendingNewCard = CardTemplate.createAsActive(cardTemplate)
+        doneActivityIndicator.startAnimating()
+        PFUser.currentUser()!.pendingNewCard!.saveInBackgroundWithBlock { (success, error) in
+            self.doneActivityIndicator.stopAnimating()
+            if success {
+                self.performSegueWithIdentifier(SegueIdentifier.Done, sender: nil)
+            } else {
+                UIAlertView(title: "Oops...", message: error!.localizedDescription, delegate: nil, cancelButtonTitle: "Got it").show()
             }
-        } else {
-            UIAlertView(title: result.errorSection, message: result.errorMessage, delegate: nil, cancelButtonTitle: "Got it").show()
         }
     }
+    
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -181,6 +136,7 @@ class TypeCountsNewCardViewController: UIViewController, UIPickerViewDataSource,
         if editingStyle == UITableViewCellEditingStyle.Delete {
             // TODO: inefficient
             let keys = Array(PFUser.currentUser()!.pendingNewCard!.typeCounts.keys)
+            removeTypeCount(type: keys[indexPath.row])
             PFUser.currentUser()!.pendingNewCard!.typeCounts.removeValueForKey(keys[indexPath.row])
             tableView.reloadData()
         }
@@ -194,4 +150,36 @@ class TypeCountsNewCardViewController: UIViewController, UIPickerViewDataSource,
         return true
     }
     
+    // MARK: - Adding/Removing type counts
+    
+    private func addTypeCount(#type: String, count: Int) {
+        // add the new typecount
+        let cardTemplate = PFUser.currentUser()!.pendingNewCard!
+        PFUser.currentUser()!.pendingNewCard = CardTemplate.createWithTypeCount(cardTemplate, type: type, count: count)
+        addActivityIndicator.startAnimating()
+        PFUser.currentUser()!.pendingNewCard!.saveInBackgroundWithBlock { (success, error) in
+            self.addActivityIndicator.stopAnimating()
+            if success {
+                self.tableView.reloadData()
+            } else {
+                PFUser.currentUser()!.pendingNewCard = CardTemplate.createWithRemoveTypeCount(cardTemplate, type: type)
+                UIAlertView(title: "Oops...", message: error!.localizedDescription, delegate: nil, cancelButtonTitle: "Got it").show()
+            }
+        }
+    }
+    
+    private func removeTypeCount(#type: String) {
+        // remove the new typecount
+        let cardTemplate = PFUser.currentUser()!.pendingNewCard!
+        PFUser.currentUser()!.pendingNewCard = CardTemplate.createWithRemoveTypeCount(cardTemplate, type: type)
+        addActivityIndicator.startAnimating()
+        PFUser.currentUser()!.pendingNewCard!.saveInBackgroundWithBlock { (success, error) in
+            self.addActivityIndicator.stopAnimating()
+            if success {
+                self.tableView.reloadData()
+            } else {
+                UIAlertView(title: "Oops...", message: error!.localizedDescription, delegate: nil, cancelButtonTitle: "Got it").show()
+            }
+        }
+    }
 }
