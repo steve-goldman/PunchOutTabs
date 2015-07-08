@@ -51,6 +51,12 @@ public class CardTemplate: PFObject, PFSubclassing
         return cardTemplate
     }
     
+    static func createWithRemoveTypeCount(cardTemplate: CardTemplate, type: String) -> CardTemplate {
+        cardTemplate.typeCounts[type] = nil
+        cardTemplate.typeCountsArray = CardTemplate.makeTypeCountsArray(cardTemplate.typeCounts)
+        return cardTemplate
+    }
+    
     static func createAsActive(cardTemplate: CardTemplate) -> CardTemplate {
         cardTemplate.setObject(true, forKey: Key.IsActive)
         return cardTemplate
@@ -95,7 +101,11 @@ public class CardTemplate: PFObject, PFSubclassing
             return typeCountsArray
         } set {
             typeCounts = CardTemplate.makeDict(newValue)
-            setObject(newValue, forKey: Key.TypeCounts)
+            if !newValue.isEmpty {
+                setObject(newValue, forKey: Key.TypeCounts)
+            } else {
+                setObject(NSNull(), forKey: Key.TypeCounts)
+            }
         }
     }
     
