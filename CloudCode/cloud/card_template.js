@@ -4,11 +4,25 @@
 
 // validate the name of a card
 exports.validate = function(request, response) {
+
+    // created by is required
+    const createdBy = request.object.get("createdBy");
+
+    if (createdBy == null) {
+        response.error("CreatedBy is null!");
+        return;
+    }
+
+    if (createdBy.id != Parse.User.current().id) {
+        response.error("CreatedBy != current user");
+        return;
+    }
+
     // name is required
     const NAME_MIN_LENGTH = 4;
     const NAME_MAX_LENGTH = 32;
 
-    const name = request.object.get("name")
+    const name = request.object.get("name");
 
     if (name == null) {
         response.error("Name is null!");

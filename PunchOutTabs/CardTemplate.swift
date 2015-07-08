@@ -24,6 +24,7 @@ public class CardTemplate: PFObject, PFSubclassing
     
     private struct Key
     {
+        static let CreatedBy = "createdBy"
         static let Name = "name"
         static let EndDate = "endDate"
         static let TypeCounts = "typeCounts"
@@ -34,6 +35,15 @@ public class CardTemplate: PFObject, PFSubclassing
     public static let ClassTypes = [ "Any Class", "Barre", "Spin", "Yoga" ]
     
     // MARK: - Properties
+    
+    public var createdBy: PFUser! {
+        get {
+            return objectForKey(Key.CreatedBy) as! PFUser
+        }
+        set {
+            setObject(newValue, forKey: Key.CreatedBy)
+        }
+    }
     
     public var name: String! {
         get {

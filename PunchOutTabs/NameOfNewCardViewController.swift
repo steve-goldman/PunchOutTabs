@@ -40,6 +40,7 @@ class NameOfNewCardViewController: UIViewController, UITextFieldDelegate
     @IBAction func nextPressed() {
         // start a new card
         var cardTemplate = CardTemplate()
+        cardTemplate.createdBy = PFUser.currentUser()!
         cardTemplate.name = cardNameField.text
         activityIndicator.startAnimating()
         cardTemplate.saveInBackgroundWithBlock { (success, error) in
