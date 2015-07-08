@@ -48,7 +48,7 @@ class NameOfNewCardViewController: UIViewController, UITextFieldDelegate
                 // associate the card with the user
                 PFUser.currentUser()!.pendingNewCard = cardTemplate
                 self.activityIndicator.startAnimating()
-                PFUser.currentUser()!.pendingNewCard!.saveInBackgroundWithBlock { (success, error) in
+                PFUser.currentUser()!.saveInBackgroundWithBlock { (success, error) in
                     self.activityIndicator.stopAnimating()
                     if success {
                         self.performSegueWithIdentifier(SegueIdentifier.Next, sender: nil)
