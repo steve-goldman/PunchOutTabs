@@ -9,8 +9,12 @@
 import Foundation
 import Parse
 
-public class CardTemplate: PFObject
+public class CardTemplate: PFObject, PFSubclassing
 {
+
+    public static func parseClassName() -> String {
+        return self.ClassName
+    }
     
     // MARK: - Classname
     
