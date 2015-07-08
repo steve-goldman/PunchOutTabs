@@ -116,31 +116,22 @@ exports.removeOrphaned = function(request, status) {
     query.select("createdBy");
     query.include("createdBy");
 
-    query.find({
-        success: function(results) {
-            var cardTemplatesToRemove = [];
-            for (var i = 0; i < results.length; i++) {
-                var result = results[i];
-                var user = result.get("createdBy");
-                var userPendingNewCard = user.get("pendingNewCard");
-
-                if (!userPendingNewCard || userPendingNewCard.id != result.id) {
-                    cardTemplatesToRemove.push(result);
-                }
+    var cardTemplatesToRemove = [];
+    query.find().then(function(results) {
+        for (var i = 0; i < results.length; i++) {
+            var result = results[i];
+            var user = result.get("createdBy");
+            var userPendingNewCard = user.get("pendingNewCard");
+            
+            if (!userPendingNewCard || userPendingNewCard.id != result.id) {
+                cardTemplatesToRemove.push(result);
             }
-
-            Parse.Object.destroyAll(cardTemplatesToRemove, {
-                success: function() {
-                    status.success("removed " + cardTemplatesToRemove.length);
-                },
-                error: function(error) {
-                    status.error(error);
-                }
-            });
-        },
-        error: function(error) {
-            console.log("Error: " + error);
-            status.error();
         }
+        
+        return Parse.Object.destroyAll(cardTemplatesToRemove)
+    }).then(function() {
+        status.success("removed " + cardTemplatesToRemove.length);
+    }, function(error) {
+        status.error(error);
     });
 }
