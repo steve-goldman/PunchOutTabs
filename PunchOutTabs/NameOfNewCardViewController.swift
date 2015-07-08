@@ -38,15 +38,18 @@ class NameOfNewCardViewController: UIViewController, UITextFieldDelegate
     // MARK: - Actions
     
     @IBAction func nextPressed() {
+        // start a new card
+        var cardTemplate = CardTemplate.create(cardNameField.text)
         activityIndicator.startAnimating()
-        PFCloud.callFunctionInBackground("nameOfNewCardNextPressed", withParameters: ["name": cardNameField.text]) { (result, error) in
+        cardTemplate.saveInBackgroundWithBlock { (success, error) in
             self.activityIndicator.stopAnimating()
-            if result != nil {
-                // the user object may have been modified, so refresh it
+            if success {
+                // associate the card with the user
+                PFUser.currentUser()!.pendingNewCard = cardTemplate
                 self.activityIndicator.startAnimating()
-                PFUser.currentUser()!.fetchInBackgroundWithBlock { (user, error) in
+                PFUser.currentUser()!.pendingNewCard!.saveInBackgroundWithBlock { (success, error) in
                     self.activityIndicator.stopAnimating()
-                    if user != nil {
+                    if success {
                         self.performSegueWithIdentifier(SegueIdentifier.Next, sender: nil)
                     } else {
                         UIAlertView(title: "Oops...", message: error!.localizedDescription, delegate: nil, cancelButtonTitle: "Got it").show()
