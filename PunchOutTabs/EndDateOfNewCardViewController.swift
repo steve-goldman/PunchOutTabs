@@ -54,21 +54,15 @@ class EndDateOfNewCardViewController: UIViewController
         
         // date picker gives midnight of the date chosen, we want midnight of the next day
         let oneDay = Double(24 * 60 * 60)
-        let date = NSCalendar.currentCalendar().startOfDayForDate(datePicker.date).dateByAddingTimeInterval(oneDay)
+        let endDate = NSCalendar.currentCalendar().startOfDayForDate(datePicker.date).dateByAddingTimeInterval(oneDay)
         
-        PFCloud.callFunctionInBackground("endDateOfNewCardNextPressed", withParameters: ["endDate": date]) { (result, error) in
+        activityIndicator.startAnimating()
+        let cardTemplate = PFUser.currentUser()!.pendingNewCard!
+        PFUser.currentUser()!.pendingNewCard = CardTemplate.createWithEndDate(cardTemplate, endDate: endDate)
+        PFUser.currentUser()!.pendingNewCard!.saveInBackgroundWithBlock { (success, error) in
             self.activityIndicator.stopAnimating()
-            if result != nil {
-                // the pending new card object may have been modified, so refresh it
-                self.activityIndicator.startAnimating()
-                PFUser.currentUser()!.pendingNewCard!.fetchInBackgroundWithBlock { (user, error) in
-                    self.activityIndicator.stopAnimating()
-                    if user != nil {
-                        self.performSegueWithIdentifier(SegueIdentifier.Next, sender: nil)
-                    } else {
-                        UIAlertView(title: "Oops...", message: error!.localizedDescription, delegate: nil, cancelButtonTitle: "Got it").show()
-                    }
-                }
+            if success {
+                self.performSegueWithIdentifier(SegueIdentifier.Next, sender: nil)
             } else {
                 UIAlertView(title: "Oops...", message: error!.localizedDescription, delegate: nil, cancelButtonTitle: "Got it").show()
             }
