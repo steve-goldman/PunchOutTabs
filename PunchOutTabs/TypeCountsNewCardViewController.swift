@@ -72,14 +72,14 @@ class TypeCountsNewCardViewController: UIViewController, UIPickerViewDataSource,
     
     @IBAction func donePressed() {
         // activate the card template
-        let cardTemplate = PFUser.currentUser()!.pendingNewCard!
-        PFUser.currentUser()!.pendingNewCard = CardTemplate.createAsActive(cardTemplate)
+        PFUser.currentUser()!.pendingNewCard!.isActive = true
         doneActivityIndicator.startAnimating()
         PFUser.currentUser()!.pendingNewCard!.saveInBackgroundWithBlock { (success, error) in
             self.doneActivityIndicator.stopAnimating()
             if success {
                 self.performSegueWithIdentifier(SegueIdentifier.Done, sender: nil)
             } else {
+                PFUser.currentUser()!.pendingNewCard!.isActive = false
                 UIAlertView(title: "Oops...", message: error!.localizedDescription, delegate: nil, cancelButtonTitle: "Got it").show()
             }
         }
@@ -116,15 +116,13 @@ class TypeCountsNewCardViewController: UIViewController, UIPickerViewDataSource,
     // MARK: - UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return PFUser.currentUser()!.pendingNewCard!.typeCounts.count
+        return PFUser.currentUser()!.pendingNewCard!.getTypes().count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier.TypeCounts, forIndexPath: indexPath) as! TypeCountsTableViewCell
-        // TODO: inefficient
-        let keys = Array(PFUser.currentUser()!.pendingNewCard!.typeCounts.keys)
-        cell.type = keys[indexPath.row]
-        cell.count = PFUser.currentUser()!.pendingNewCard!.typeCounts[keys[indexPath.row]]
+        cell.type = Array(PFUser.currentUser()!.pendingNewCard!.getTypes())[indexPath.row]
+        cell.count = PFUser.currentUser()!.pendingNewCard!.getCountForType(cell.type!)
         return cell
     }
     
@@ -134,11 +132,8 @@ class TypeCountsNewCardViewController: UIViewController, UIPickerViewDataSource,
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            // TODO: inefficient
-            let keys = Array(PFUser.currentUser()!.pendingNewCard!.typeCounts.keys)
-            removeTypeCount(type: keys[indexPath.row])
-            PFUser.currentUser()!.pendingNewCard!.typeCounts.removeValueForKey(keys[indexPath.row])
-            tableView.reloadData()
+            let type = Array(PFUser.currentUser()!.pendingNewCard!.getTypes())[indexPath.row]
+            removeType(type)
         }
     }
     
@@ -153,31 +148,29 @@ class TypeCountsNewCardViewController: UIViewController, UIPickerViewDataSource,
     // MARK: - Adding/Removing type counts
     
     private func addTypeCount(#type: String, count: Int) {
-        // add the new typecount
-        let cardTemplate = PFUser.currentUser()!.pendingNewCard!
-        PFUser.currentUser()!.pendingNewCard = CardTemplate.createWithTypeCount(cardTemplate, type: type, count: count)
+        PFUser.currentUser()!.pendingNewCard!.setType(type, count: count)
         addActivityIndicator.startAnimating()
         PFUser.currentUser()!.pendingNewCard!.saveInBackgroundWithBlock { (success, error) in
             self.addActivityIndicator.stopAnimating()
             if success {
                 self.tableView.reloadData()
             } else {
-                PFUser.currentUser()!.pendingNewCard = CardTemplate.createWithRemoveTypeCount(cardTemplate, type: type)
+                PFUser.currentUser()!.pendingNewCard!.unsetType(type)
                 UIAlertView(title: "Oops...", message: error!.localizedDescription, delegate: nil, cancelButtonTitle: "Got it").show()
             }
         }
     }
     
-    private func removeTypeCount(#type: String) {
-        // remove the new typecount
-        let cardTemplate = PFUser.currentUser()!.pendingNewCard!
-        PFUser.currentUser()!.pendingNewCard = CardTemplate.createWithRemoveTypeCount(cardTemplate, type: type)
+    private func removeType(type: String) {
+        let oldCount = PFUser.currentUser()!.pendingNewCard!.getCountForType(type)
+        PFUser.currentUser()!.pendingNewCard!.unsetType(type)
         addActivityIndicator.startAnimating()
         PFUser.currentUser()!.pendingNewCard!.saveInBackgroundWithBlock { (success, error) in
             self.addActivityIndicator.stopAnimating()
             if success {
                 self.tableView.reloadData()
             } else {
+                PFUser.currentUser()!.pendingNewCard!.setType(type, count: oldCount)
                 UIAlertView(title: "Oops...", message: error!.localizedDescription, delegate: nil, cancelButtonTitle: "Got it").show()
             }
         }

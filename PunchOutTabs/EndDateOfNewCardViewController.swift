@@ -56,9 +56,8 @@ class EndDateOfNewCardViewController: UIViewController
         let oneDay = Double(24 * 60 * 60)
         let endDate = NSCalendar.currentCalendar().startOfDayForDate(datePicker.date).dateByAddingTimeInterval(oneDay)
         
+        PFUser.currentUser()!.pendingNewCard!.endDate = endDate
         activityIndicator.startAnimating()
-        let cardTemplate = PFUser.currentUser()!.pendingNewCard!
-        PFUser.currentUser()!.pendingNewCard = CardTemplate.createWithEndDate(cardTemplate, endDate: endDate)
         PFUser.currentUser()!.pendingNewCard!.saveInBackgroundWithBlock { (success, error) in
             self.activityIndicator.stopAnimating()
             if success {
