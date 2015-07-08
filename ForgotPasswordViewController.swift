@@ -52,21 +52,14 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate
     
     @IBAction func resetPasswordPressed()
     {
-        let emailAddress = emailAddressField.text
-        
-        let result = SignUpValidator.validateEmail(emailAddress)
-        if result.valid {
-            activityIndicator.startAnimating()
-            PFUser.requestPasswordResetForEmailInBackground(emailAddress) { (success, error) in
-                self.activityIndicator.stopAnimating()
-                if success {
-                    self.performSegueWithIdentifier(SegueIdentifier.PasswordRequested, sender: nil)
-                } else {
-                    UIAlertView(title: "Could not request new password", message: "Something went wrong: \(error!.localizedDescription)", delegate: nil, cancelButtonTitle: "Got it").show()
-                }
+        activityIndicator.startAnimating()
+        PFUser.requestPasswordResetForEmailInBackground(emailAddressField.text) { (success, error) in
+            self.activityIndicator.stopAnimating()
+            if success {
+                self.performSegueWithIdentifier(SegueIdentifier.PasswordRequested, sender: nil)
+            } else {
+                UIAlertView(title: "Oops...", message: error!.localizedDescription, delegate: nil, cancelButtonTitle: "Got it").show()
             }
-        } else {
-            UIAlertView(title: result.errorSection, message: result.errorMessage, delegate: nil, cancelButtonTitle: "Got it").show()
         }
     }
     

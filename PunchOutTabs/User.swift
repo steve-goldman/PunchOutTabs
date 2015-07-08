@@ -53,4 +53,8 @@ public extension PFUser
             }
         }
     }
+    
+    public static var PasswordMinLength: Int {
+        return 6
+    }
 }

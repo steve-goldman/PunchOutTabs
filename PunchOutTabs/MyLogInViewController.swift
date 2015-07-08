@@ -82,7 +82,7 @@ class MyLogInViewController: UIViewController, UITextFieldDelegate
                 if user != nil {
                     self.performSegueWithIdentifier(SegueIdentifier.LoggedIn, sender: nil)
                 } else {
-                    UIAlertView(title: "Could not log in", message: "Something went wrong: \(error!.localizedDescription)", delegate: nil, cancelButtonTitle: "Got it").show()
+                    UIAlertView(title: "Oops...", message: error!.localizedDescription, delegate: nil, cancelButtonTitle: "Got it").show()
                 }
             }
         }

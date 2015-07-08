@@ -65,35 +65,36 @@ class MySignUpViewController: UIViewController, UITextFieldDelegate
 
     @IBAction func signUpPressed()
     {
-        let username = usernameField.text
         let password = passwordField.text
-        let emailAddress = emailAddressField.text
         
-        let result = SignUpValidator.validate(username: username, password: password, email: emailAddress)
-        if result.valid {
-            let newUser = PFUser()
-            newUser.username = username
-            newUser.password = password
-            newUser.email = emailAddress
-            activityIndicator.startAnimating()
-            newUser.signUpInBackgroundWithBlock { (success, error) in
-                self.activityIndicator.stopAnimating()
-                if success {
-                    self.activityIndicator.startAnimating()
-                    PFUser.logInWithUsernameInBackground(username, password: password) { (user, error) in
-                        self.activityIndicator.stopAnimating()
-                        if user != nil {
-                            self.performSegueWithIdentifier(SegueIdentifier.SignedUp, sender: nil)
-                        } else {
-                            UIAlertView(title: "Could not log in", message: "Something went wrong: \(error!.localizedDescription)", delegate: nil, cancelButtonTitle: "Got it").show()
-                        }
+        // need to handle password validation outside of parse cloud
+        if (count(password) < PFUser.PasswordMinLength || password.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).isEmpty) {
+            UIAlertView(title: "Oops...", message: "Password must be at least \(PFUser.PasswordMinLength) characters", delegate: nil, cancelButtonTitle: "Got it").show()
+            return
+        }
+        
+        let username = usernameField.text
+
+        let newUser = PFUser()
+        newUser.username = username
+        newUser.password = password
+        newUser.email = emailAddressField.text
+        activityIndicator.startAnimating()
+        newUser.signUpInBackgroundWithBlock { (success, error) in
+            self.activityIndicator.stopAnimating()
+            if success {
+                self.activityIndicator.startAnimating()
+                PFUser.logInWithUsernameInBackground(username, password: password) { (user, error) in
+                    self.activityIndicator.stopAnimating()
+                    if user != nil {
+                        self.performSegueWithIdentifier(SegueIdentifier.SignedUp, sender: nil)
+                    } else {
+                        UIAlertView(title: "Oops...", message: "Could not log in: \(error!.localizedDescription)", delegate: nil, cancelButtonTitle: "Got it").show()
                     }
-                } else {
-                    UIAlertView(title: "Could not sign up", message: "Something went wrong: \(error!.localizedDescription)", delegate: nil, cancelButtonTitle: "Got it").show()
                 }
+            } else {
+                UIAlertView(title: "Oops...", message: error!.localizedDescription, delegate: nil, cancelButtonTitle: "Got it").show()
             }
-        } else {
-            UIAlertView(title: result.errorSection, message: result.errorMessage, delegate: nil, cancelButtonTitle: "Got it").show()
         }
     }
     
