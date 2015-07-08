@@ -9,7 +9,7 @@ exports.validate = function(request, response) {
     // created by is required
     const createdBy = request.object.get("createdBy");
 
-    if (createdBy == null) {
+    if (!createdBy) {
         response.error("CreatedBy is null!");
         return;
     }
@@ -25,12 +25,7 @@ exports.validate = function(request, response) {
 
     const name = request.object.get("name");
 
-    if (name == null) {
-        response.error("Name is null!");
-        return;
-    }
-    
-    if (name.length < NAME_MIN_LENGTH || name.length > NAME_MAX_LENGTH) {
+    if (!name || name.length < NAME_MIN_LENGTH || name.length > NAME_MAX_LENGTH) {
         response.error("Name must be between " + NAME_MIN_LENGTH + " and " + NAME_MAX_LENGTH + " characters");
         return;
     }
@@ -42,7 +37,7 @@ exports.validate = function(request, response) {
 
     const endDate = request.object.get("endDate")
 
-    if (endDate != null) {
+    if (endDate) {
 
         const now = new Date();
         const delta = (endDate.getTime() - now.getTime()) / (24 * 60 * 60 * 1000);
@@ -61,7 +56,7 @@ exports.validate = function(request, response) {
 
     const typeCounts = request.object.get("typeCounts");
 
-    if (typeCounts != null) {
+    if (typeCounts) {
 
         var dict = {};
         var numTypeCounts = 0;
@@ -82,7 +77,7 @@ exports.validate = function(request, response) {
             }
 
             var type = tokens[1];
-            if (dict[type] != null) {
+            if (dict[type]) {
                 response.error("Class cannot be included twice: " + type);
                 return;
             }
@@ -91,7 +86,7 @@ exports.validate = function(request, response) {
             numTypeCounts++;
         }
 
-        if (dict[ANY_CLASS_TYPE] != null && numTypeCounts > 1) {
+        if (dict[ANY_CLASS_TYPE] && numTypeCounts > 1) {
             response.error("If '" + ANY_CLASS_TYPE + "' is included, no others may be");
             return;
         }
@@ -101,7 +96,7 @@ exports.validate = function(request, response) {
     const isActive = request.object.get("isActive");
 
     if (isActive) {
-        if (typeCounts == null || typeCounts.length == 0) {
+        if (!typeCounts || typeCounts.length == 0) {
             response.error("Must have at least one type of class");
             return;
         }
