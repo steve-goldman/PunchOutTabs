@@ -50,18 +50,27 @@ class EndDateOfNewCardViewController: UIViewController
     // MARK: - Actions
     
     @IBAction func nextPressed() {
-        // validation is handled by the UI (min and max date)
-        
-        // update the card template
-        let cardTemplate = PFUser.currentUser()!.pendingNewCard
-        PFUser.currentUser()!.pendingNewCard = CardTemplate.createWithEndDate(cardTemplate!, endDate: datePicker.date)
         activityIndicator.startAnimating()
-        PFUser.currentUser()!.pendingNewCard!.saveInBackgroundWithBlock { (success, error) in
+        
+        // date picker gives midnight of the date chosen, we want midnight of the next day
+        let oneDay = Double(24 * 60 * 60)
+        let date = NSCalendar.currentCalendar().startOfDayForDate(datePicker.date).dateByAddingTimeInterval(oneDay)
+        
+        PFCloud.callFunctionInBackground("endDateOfNewCardNextPressed", withParameters: ["endDate": date]) { (result, error) in
             self.activityIndicator.stopAnimating()
-            if success {
-                self.performSegueWithIdentifier(SegueIdentifier.Next, sender: nil)
+            if result != nil {
+                // the pending new card object may have been modified, so refresh it
+                self.activityIndicator.startAnimating()
+                PFUser.currentUser()!.pendingNewCard!.fetchInBackgroundWithBlock { (user, error) in
+                    self.activityIndicator.stopAnimating()
+                    if user != nil {
+                        self.performSegueWithIdentifier(SegueIdentifier.Next, sender: nil)
+                    } else {
+                        UIAlertView(title: "Oops...", message: error!.localizedDescription, delegate: nil, cancelButtonTitle: "Got it").show()
+                    }
+                }
             } else {
-                UIAlertView(title: "Could not set end date", message: "Something went wrong: \(error!.localizedDescription)", delegate: nil, cancelButtonTitle: "Got it").show()
+                UIAlertView(title: "Oops...", message: error!.localizedDescription, delegate: nil, cancelButtonTitle: "Got it").show()
             }
         }
     }
