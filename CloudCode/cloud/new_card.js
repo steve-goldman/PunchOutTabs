@@ -82,13 +82,8 @@ exports.validateName = function(request, response) {
         }
     }
 
-    // isActive is required
+    // isActive is optional
     const isActive = request.object.get("isActive");
-
-    if (isActive == null) {
-        response.error("IsActive is null!");
-        return;
-    }
 
     if (isActive) {
         if (typeCounts == null || typeCounts.length == 0) {
