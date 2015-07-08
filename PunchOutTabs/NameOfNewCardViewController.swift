@@ -42,7 +42,16 @@ class NameOfNewCardViewController: UIViewController, UITextFieldDelegate
         PFCloud.callFunctionInBackground("nameOfNewCardNextPressed", withParameters: ["name": cardNameField.text]) { (result, error) in
             self.activityIndicator.stopAnimating()
             if result != nil {
-                self.performSegueWithIdentifier(SegueIdentifier.Next, sender: nil)
+                // the user object may have been modified, so refresh it
+                self.activityIndicator.startAnimating()
+                PFUser.currentUser()!.fetchInBackgroundWithBlock { (user, error) in
+                    self.activityIndicator.stopAnimating()
+                    if user != nil {
+                        self.performSegueWithIdentifier(SegueIdentifier.Next, sender: nil)
+                    } else {
+                        UIAlertView(title: "Oops...", message: error!.localizedDescription, delegate: nil, cancelButtonTitle: "Got it").show()
+                    }
+                }
             } else {
                 UIAlertView(title: "Oops...", message: error!.localizedDescription, delegate: nil, cancelButtonTitle: "Got it").show()
             }
