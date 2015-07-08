@@ -2,7 +2,8 @@
 // methods called by users via cloud definitions in main.js
 //
 
-// validate the name of a card
+// validate the card template keeping in mind it could be at any stage
+// of being built up, so some fields are optional
 exports.validate = function(request, response) {
 
     // created by is required
