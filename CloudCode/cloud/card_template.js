@@ -108,3 +108,43 @@ exports.validate = function(request, response) {
 
     response.success();
 }
+
+exports.removeOrphaned = function(request, status) {
+    // card templates where isActive is NULL and no user is working on it
+    // (that is to say that the user has started working on another since)
+
+    const CardTemplate = Parse.Object.extend("CardTemplate");
+
+    var query = new Parse.Query(CardTemplate);
+    query.doesNotExist("isActive");
+    query.select("createdBy");
+    query.include("createdBy");
+
+    query.find({
+        success: function(results) {
+            var cardTemplatesToRemove = [];
+            for (var i = 0; i < results.length; i++) {
+                var result = results[i];
+                var user = result.get("createdBy");
+                var userPendingNewCard = user.get("pendingNewCard");
+
+                if (!userPendingNewCard || userPendingNewCard.id != result.id) {
+                    cardTemplatesToRemove.push(result);
+                }
+            }
+
+            Parse.Object.destroyAll(cardTemplatesToRemove, {
+                success: function() {
+                    status.success("removed " + cardTemplatesToRemove.length);
+                },
+                error: function(error) {
+                    status.error(error);
+                }
+            });
+        },
+        error: function(error) {
+            console.log("Error: " + error);
+            status.error();
+        }
+    });
+}
