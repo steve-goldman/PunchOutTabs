@@ -43,7 +43,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaS-dO-paf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2124" y="2384"/>
+            <point key="canvasLocation" x="-1796" y="4736"/>
         </scene>
         <!--Back of Card-->
         <scene sceneID="XPI-OO-Gv5">
@@ -62,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GV4-nP-tXU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3716" y="1946"/>
+            <point key="canvasLocation" x="-204" y="4298"/>
         </scene>
         <!--New Card-->
         <scene sceneID="yun-LG-M28">
@@ -145,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mmA-uT-oT1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3716" y="2709"/>
+            <point key="canvasLocation" x="-204" y="5061"/>
         </scene>
         <!--Classes-->
         <scene sceneID="pAw-RU-igw">
@@ -314,7 +314,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AC1-uo-oDu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3906" y="3498"/>
+            <point key="canvasLocation" x="-14" y="5850"/>
         </scene>
         <!--End Date-->
         <scene sceneID="3p0-Fh-f1c">
@@ -378,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MLL-BA-Woa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4430" y="2709"/>
+            <point key="canvasLocation" x="510" y="5061"/>
         </scene>
         <!--Punch It-->
         <scene sceneID="Irr-UK-5UR">
@@ -512,7 +512,7 @@
                 <pageViewController storyboardIdentifier="MyCardsPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="fW4-6S-d5d" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9BR-eN-36x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1256" y="1616"/>
+            <point key="canvasLocation" x="-2664" y="3968"/>
         </scene>
         <!--My Sign Up View Controller-->
         <scene sceneID="2c0-oy-0De">
@@ -807,7 +807,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M0S-EU-gxh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1256" y="2384"/>
+            <point key="canvasLocation" x="-2664" y="4736"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="2eh-Xt-jPj">
@@ -943,7 +943,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iuj-tC-L8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2964" y="2709"/>
+            <point key="canvasLocation" x="-956" y="5061"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="smz-aJ-i8o">
@@ -961,7 +961,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hkE-PC-Zsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2964" y="1946"/>
+            <point key="canvasLocation" x="-956" y="4298"/>
         </scene>
     </scenes>
     <resources>
