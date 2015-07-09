@@ -105,6 +105,32 @@ exports.validate = function(request, response) {
     response.success();
 }
 
+const CardInstance = Parse.Object.extend("CardInstance");
+
+exports.beforeDelete = function(request, response) {
+    // only allow delete if card is active.  non-active cards get cleaned
+    // up by the background job
+
+    if (!request.object.get("isActive")) {
+        response.error("Cannot detroy card template due to inactive");
+        return;
+    }
+
+    // make sure there are no references to the object in card instances
+    var query = new Parse.Query(CardInstance);
+    query.equalTo("cardTemplate", request.object);
+
+    query.find().then(function(results) {
+        if (results.length > 0) {
+            response.error("Cannot destroy card template due to reference(s) in card instances");
+            return;
+        }
+        response.success();
+    }, function error(error) {
+        response.error(error);
+    });
+}
+
 exports.removeOrphaned = function(request, status) {
     // card templates where isActive is NULL and no user is working on it
     // (that is to say that the user has started working on another since)
