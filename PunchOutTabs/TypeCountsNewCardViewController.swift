@@ -77,7 +77,19 @@ class TypeCountsNewCardViewController: UIViewController, UIPickerViewDataSource,
         PFUser.currentUser()!.pendingNewCard!.saveInBackgroundWithBlock { (success, error) in
             self.doneActivityIndicator.stopAnimating()
             if success {
-                self.performSegueWithIdentifier(SegueIdentifier.Done, sender: nil)
+                // make a card instance for the template and the user
+                var cardInstance = CardInstance()
+                cardInstance.user = PFUser.currentUser()
+                cardInstance.cardTemplate = PFUser.currentUser()!.pendingNewCard!
+                self.doneActivityIndicator.startAnimating()
+                cardInstance.saveInBackgroundWithBlock { (success, error) in
+                    self.doneActivityIndicator.stopAnimating()
+                    if !success {
+                        UIAlertView(title: "Oops...", message: "Couldn't create a card instance", delegate: nil, cancelButtonTitle: "Continue").show()
+                    }
+                    // either way do this
+                    self.performSegueWithIdentifier(SegueIdentifier.Done, sender: nil)
+                }
             } else {
                 PFUser.currentUser()!.pendingNewCard!.isActive = false
                 UIAlertView(title: "Oops...", message: error!.localizedDescription, delegate: nil, cancelButtonTitle: "Got it").show()
