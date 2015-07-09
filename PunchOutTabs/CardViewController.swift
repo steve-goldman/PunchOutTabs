@@ -32,7 +32,7 @@ class CardViewController: UIViewController
         didSet {
             activityIndicator?.startAnimating()
             cardTemplate = PFObject(withoutDataWithClassName: CardTemplate.ClassName, objectId: cardInstance.cardTemplate.objectId) as! CardTemplate
-            cardTemplate.fetchIfNeededInBackgroundWithBlock { (cardTemplate, error) -> Void in
+            cardTemplate.fetchIfNeededInBackgroundWithBlock { [unowned self] (cardTemplate, error) -> Void in
                 self.activityIndicator?.stopAnimating()
                 if cardTemplate != nil {
                     // TODO: is this closure capture?? -- fix if so
