@@ -762,9 +762,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="9VW-an-shx" kind="relationship" relationship="viewControllers" id="qVz-fH-Cpe"/>
-                        <segue destination="l5G-uM-TgZ" kind="relationship" relationship="viewControllers" id="1Wb-vZ-SWF"/>
                         <segue destination="UG2-G7-J9q" kind="show" identifier="Log In" id="do6-aV-VD9"/>
                         <segue destination="Yrb-Yn-ZpN" kind="relationship" relationship="viewControllers" id="tb8-rk-V8i"/>
+                        <segue destination="l5G-uM-TgZ" kind="relationship" relationship="viewControllers" id="LbD-XI-HCg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wnu-ul-MBx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -971,7 +971,7 @@
         <image name="icon_star" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FoG-1l-05e"/>
+        <segue reference="do6-aV-VD9"/>
         <segue reference="TMe-PR-M7D"/>
     </inferredMetricsTieBreakers>
 </document>
