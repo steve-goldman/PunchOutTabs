@@ -41,11 +41,7 @@ class EndDateOfNewCardViewController: UIViewController
         }
     }
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView! {
-        didSet {
-            activityIndicator.hidesWhenStopped = true
-        }
-    }
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Actions
     

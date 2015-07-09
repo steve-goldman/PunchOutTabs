@@ -35,11 +35,7 @@ class MyLogInViewController: UIViewController, UITextFieldDelegate
         }
     }
 
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView! {
-        didSet {
-            activityIndicator.hidesWhenStopped = true
-        }
-    }
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private var controllerViewStyle: ControllerViewStyle!
     

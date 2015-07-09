@@ -41,11 +41,7 @@ class TypeCountsNewCardViewController: UIViewController, UIPickerViewDataSource,
         }
     }
     
-    @IBOutlet weak var addActivityIndicator: UIActivityIndicatorView! {
-        didSet {
-            addActivityIndicator.hidesWhenStopped = true
-        }
-    }
+    @IBOutlet weak var addActivityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var doneActivityIndicator: UIActivityIndicatorView! {
         didSet {

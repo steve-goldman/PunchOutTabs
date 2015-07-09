@@ -99,7 +99,7 @@
                                     <action selector="nextPressed" destination="dYq-i2-THw" eventType="touchUpInside" id="CAx-4L-EuF"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fZw-9E-uUj">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fZw-9E-uUj">
                                 <rect key="frame" x="250.5" y="142" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
@@ -254,10 +254,10 @@
                                     <action selector="donePressed" destination="eRw-Me-sC5" eventType="touchUpInside" id="eMc-2a-nmh"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ksj-FX-0Nh">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ksj-FX-0Nh">
                                 <rect key="frame" x="259" y="339" width="20" height="20"/>
                             </activityIndicatorView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hAO-QD-kG3">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hAO-QD-kG3">
                                 <rect key="frame" x="255" y="567" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
@@ -352,7 +352,7 @@
                                     <action selector="nextPressed" destination="3PH-K4-0Uk" eventType="touchUpInside" id="mYa-IJ-tpq"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="gM7-PJ-DLO">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="gM7-PJ-DLO">
                                 <rect key="frame" x="251" y="230" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
@@ -467,7 +467,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="v45-Uf-Lgk">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="v45-Uf-Lgk">
                                 <rect key="frame" x="240" y="60" width="20" height="20"/>
                                 <color key="color" cocoaTouchSystemColor="lightTextColor"/>
                             </activityIndicatorView>
@@ -559,7 +559,7 @@
                                     <action selector="signUpPressed" destination="rfS-WJ-1S6" eventType="touchUpInside" id="dDt-xa-JeD"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="exT-X7-zSM">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="exT-X7-zSM">
                                 <rect key="frame" x="245" y="290" width="20" height="20"/>
                             </activityIndicatorView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uni-1x-nTo">
@@ -702,7 +702,7 @@
                                     <segue destination="zxc-Pa-HyG" kind="show" identifier="Sign Up" id="h9c-Nc-5od"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="V0g-40-Gr5">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="V0g-40-Gr5">
                                 <rect key="frame" x="245" y="207" width="20" height="20"/>
                                 <color key="color" cocoaTouchSystemColor="lightTextColor"/>
                             </activityIndicatorView>
@@ -850,7 +850,7 @@
                                     <action selector="signUpPressed" destination="rfS-WJ-1S6" eventType="touchUpInside" id="d3a-qi-VDC"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="b1A-7K-I47">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="b1A-7K-I47">
                                 <rect key="frame" x="211" y="213" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
