@@ -9,26 +9,15 @@
 import Foundation
 import Parse
 
-public class CardInstance: PFObject
+public class CardInstance: PFObject, PFSubclassing
 {
     
     // MARK: - Classname
     
-    private static let ClassName = "CardInstance"
+    public static let ClassName = "CardInstance"
     
-    // MARK: - Static Initializers
-    
-    static func create(#user: PFUser, cardTemplate: CardTemplate) -> CardInstance {
-        let cardInstance = CardInstance(className: self.ClassName)
-        cardInstance.setObject(user, forKey: Key.User)
-        cardInstance.setObject(cardTemplate, forKey: Key.CardTemplate)
-        cardInstance.setObject(false, forKey: Key.IsArchived)
-        return cardInstance
-    }
-    
-    static func createAsArchived(cardInstance: CardInstance) -> CardInstance {
-        cardInstance.setObject(true, forKey: Key.IsArchived)
-        return cardInstance
+    public static func parseClassName() -> String {
+        return self.ClassName
     }
     
     // MARK: - Keys
@@ -43,14 +32,35 @@ public class CardInstance: PFObject
     // MARK: - Properties
     
     public var user: PFUser! {
-        return objectForKey(Key.User) as! PFUser
+        get {
+            return objectForKey(Key.User) as! PFUser
+        }
+        set {
+            setObject(newValue, forKey: Key.User)
+        }
     }
     
     public var cardTemplate: CardTemplate! {
-        return objectForKey(Key.CardTemplate) as! CardTemplate
+        get {
+            return objectForKey(Key.CardTemplate) as! CardTemplate
+        }
+        set {
+            setObject(newValue, forKey: Key.CardTemplate)
+        }
     }
     
     public var isArchived: Bool! {
-        return objectForKey(Key.IsArchived) as! Bool
+        get {
+            return objectForKey(Key.IsArchived) as! Bool
+        }
+        set {
+            setObject(newValue, forKey: Key.IsArchived)
+        }
+    }
+    
+    // MARK: - Utilities
+    
+    public static func query(#user: PFUser) -> PFQuery {
+        return PFQuery(className: self.ClassName).whereKey(Key.User, equalTo: user)
     }
 }
