@@ -11,10 +11,10 @@ import Parse
 
 public class CardTemplate: PFObject, PFSubclassing
 {
-
+    
     // MARK: - Classname
     
-    private static let ClassName = "CardTemplate"
+    public static let ClassName = "CardTemplate"
 
     public static func parseClassName() -> String {
         return self.ClassName
