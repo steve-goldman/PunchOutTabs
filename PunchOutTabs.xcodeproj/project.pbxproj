@@ -117,7 +117,7 @@
 		AA8A25031B471256009C1562 /* MyLogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLogInViewController.swift; sourceTree = "<group>"; };
 		AA8CFCE81B4A089800DFF5BF /* MySignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySignUpViewController.swift; sourceTree = "<group>"; };
 		AA8CFCEA1B4A1A1500DFF5BF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		AA8CFCEC1B4A332E00DFF5BF /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordViewController.swift; path = ../ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		AA8CFCEC1B4A332E00DFF5BF /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		AA8CFCF11B4ACB8800DFF5BF /* CoreExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreExtensions.swift; sourceTree = "<group>"; };
 		AA8CFCF31B4ACCA700DFF5BF /* ControllerViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerViewStyle.swift; sourceTree = "<group>"; };
 		AA8CFCF61B4AD39E00DFF5BF /* PunchItViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunchItViewController.swift; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 		AA8CFCFD1B4B2B1100DFF5BF /* EndDateOfNewCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndDateOfNewCardViewController.swift; sourceTree = "<group>"; };
 		AA8CFCFF1B4B2B3F00DFF5BF /* TypeCountsNewCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeCountsNewCardViewController.swift; sourceTree = "<group>"; };
 		AA8CFD011B4B323700DFF5BF /* CardTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTemplate.swift; sourceTree = "<group>"; };
-		AA8CFD051B4C511200DFF5BF /* CardInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardInstance.swift; path = ../CardInstance.swift; sourceTree = "<group>"; };
+		AA8CFD051B4C511200DFF5BF /* CardInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardInstance.swift; sourceTree = "<group>"; };
 		AA8CFD091B4E04CC00DFF5BF /* MyCardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCardsViewController.swift; sourceTree = "<group>"; };
 		AA9B51191B43AADC007E95EF /* ClassesDataSourceParseImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesDataSourceParseImpl.swift; sourceTree = "<group>"; };
 		AA9B511B1B43B0CA007E95EF /* ClassesDataSourceParseImplTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesDataSourceParseImplTest.swift; sourceTree = "<group>"; };
