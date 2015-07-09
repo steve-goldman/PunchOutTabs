@@ -19,7 +19,6 @@ class MyCardsViewController: UIViewController, UIPageViewControllerDataSource, U
     private struct StoryboardIdentifier
     {
         static let CardNavController = "CardNavController"
-        static let MyCardsPageViewController = "MyCardsPageViewController"
         static let NewCardNavController = "NewCardNavController"
     }
     
@@ -53,7 +52,7 @@ class MyCardsViewController: UIViewController, UIPageViewControllerDataSource, U
     {
         super.viewDidLoad()
         
-        pageViewController = storyboard!.instantiateViewControllerWithIdentifier(StoryboardIdentifier.MyCardsPageViewController) as! UIPageViewController
+        pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
         
         pageViewController.dataSource = self
         pageViewController.delegate = self

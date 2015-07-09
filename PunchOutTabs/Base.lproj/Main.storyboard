@@ -506,14 +506,6 @@
             </objects>
             <point key="canvasLocation" x="-104" y="1556"/>
         </scene>
-        <!--Page View Controller-->
-        <scene sceneID="1gh-k7-Fbp">
-            <objects>
-                <pageViewController storyboardIdentifier="MyCardsPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="fW4-6S-d5d" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9BR-eN-36x" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2664" y="3968"/>
-        </scene>
         <!--My Sign Up View Controller-->
         <scene sceneID="2c0-oy-0De">
             <objects>
