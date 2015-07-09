@@ -55,9 +55,7 @@ class MyCardsViewController: UIViewController, UIPageViewControllerDataSource
         CardInstance.query(user: PFUser.currentUser()!).findObjectsInBackgroundWithBlock { (results, error) in
             if results != nil && !results!.isEmpty {
                 self.cardInstances = results as! [CardInstance]
-                println("set card instances")
                 self.pageViewController.setViewControllers([self.makeViewController(cardInstance: self.cardInstances[0])], direction: .Forward, animated: true, completion: nil)
-                println("set view controller view")
             } else {
                 self.pageViewController.setViewControllers([self.storyboard?.instantiateViewControllerWithIdentifier(StoryboardIdentifier.NewCardNavController) as! UIViewController], direction: .Forward, animated: true, completion: nil)
             }
@@ -73,7 +71,6 @@ class MyCardsViewController: UIViewController, UIPageViewControllerDataSource
     //
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        println("entering beforeVC")
         for var i = 0; i < cardInstances.count - 1; i++ {
             let curNavController = viewController as! UINavigationController
             let curCardController = curNavController.visibleViewController as! CardViewController
@@ -85,7 +82,6 @@ class MyCardsViewController: UIViewController, UIPageViewControllerDataSource
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        println("entering afterVC")
         for var i = 1; i < cardInstances.count; i++ {
             let curNavController = viewController as! UINavigationController
             let curCardController = curNavController.visibleViewController as! CardViewController
