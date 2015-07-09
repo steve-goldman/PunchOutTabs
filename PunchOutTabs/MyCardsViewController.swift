@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class MyCardsViewController: UIViewController, UIPageViewControllerDataSource
+class MyCardsViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate
 {
 
     //
@@ -27,9 +27,25 @@ class MyCardsViewController: UIViewController, UIPageViewControllerDataSource
     // MARK: - Properties
     //
     
-    private var cardInstances = [CardInstance]()
+    private var cardInstances = [CardInstance]() {
+        didSet {
+            pageControl.numberOfPages = cardInstances.count
+            var index = 0
+            self.cardViewControllers = cardInstances.map({ [unowned self] (cardInstance: CardInstance) -> UIViewController in
+                let cardNavController = self.storyboard!.instantiateViewControllerWithIdentifier(StoryboardIdentifier.CardNavController) as! UINavigationController
+                let cardViewController = cardNavController.visibleViewController as! CardViewController
+                cardViewController.cardInstance = cardInstance
+                cardViewController.index = index++
+                return cardNavController
+            })
+        }
+    }
+    
+    private var cardViewControllers = [UIViewController]()
     
     private var pageViewController: UIPageViewController!
+    
+    @IBOutlet weak var pageControl: UIPageControl!
     
     //
     // MARK: Lifecycle
@@ -40,13 +56,15 @@ class MyCardsViewController: UIViewController, UIPageViewControllerDataSource
         pageViewController = storyboard!.instantiateViewControllerWithIdentifier(StoryboardIdentifier.MyCardsPageViewController) as! UIPageViewController
         
         pageViewController.dataSource = self
+        pageViewController.delegate = self
         
         addChildViewController(pageViewController)
 
-        view.addSubview(pageViewController.view)
-
+        // use 'insert' so it appears behind the page control
+        view.insertSubview(pageViewController.view, atIndex: 0)
+        
         // TODO: present a "loading..." message
-        pageViewController.setViewControllers([UIViewController()], direction: .Forward, animated: true, completion: nil)
+        //pageViewController.setViewControllers([UIViewController()], direction: .Forward, animated: true, completion: nil)
         
         pageViewController.didMoveToParentViewController(self)
         
@@ -55,60 +73,55 @@ class MyCardsViewController: UIViewController, UIPageViewControllerDataSource
         CardInstance.query(user: PFUser.currentUser()!).findObjectsInBackgroundWithBlock { (results, error) in
             if results != nil && !results!.isEmpty {
                 self.cardInstances = results!.reverse() as! [CardInstance]
-                self.pageViewController.setViewControllers([self.makeViewController(cardInstance: self.cardInstances[0])], direction: .Forward, animated: true, completion: nil)
+                self.pageViewController.setViewControllers([self.cardViewControllers[0]], direction: .Forward, animated: true, completion: nil)
             } else {
                 self.pageViewController.setViewControllers([self.storyboard?.instantiateViewControllerWithIdentifier(StoryboardIdentifier.NewCardNavController) as! UIViewController], direction: .Forward, animated: true, completion: nil)
             }
         }
-    }
-    
-    private func getViewController(index: Int) -> UIViewController {
-        return storyboard!.instantiateViewControllerWithIdentifier(StoryboardIdentifier.CardNavController) as! UIViewController
     }
 
     //
     // MARK: - UIPageViewControllerDatasource
     //
     
+    private var curIndex = 0
+    private var nextIndex = -1
+    
+    private func getIndex(viewController: UIViewController) -> Int {
+        let cardNavController = viewController as! UINavigationController
+        let cardViewController = cardNavController.visibleViewController as! CardViewController
+        return cardViewController.index
+    }
+    
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        for var i = 0; i < cardInstances.count - 1; i++ {
-            let curNavController = viewController as! UINavigationController
-            let curCardController = curNavController.visibleViewController as! CardViewController
-            if cardInstances[i + 1] == curCardController.cardInstance {
-                return makeViewController(cardInstance: cardInstances[i])
-            }
+        let index = getIndex(viewController)
+        if index == 0 {
+            return nil
+        } else {
+            return cardViewControllers[index - 1]
         }
-        return nil
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        for var i = 1; i < cardInstances.count; i++ {
-            let curNavController = viewController as! UINavigationController
-            let curCardController = curNavController.visibleViewController as! CardViewController
-            if cardInstances[i - 1] == curCardController.cardInstance {
-                return makeViewController(cardInstance: cardInstances[i])
-            }
+        let index = getIndex(viewController)
+        if index == cardViewControllers.count - 1 {
+            return nil
+        } else {
+            return cardViewControllers[index + 1]
         }
-        return nil
-    }
-    
-    private func makeViewController(#cardInstance: CardInstance) -> UIViewController {
-        let navViewController = storyboard!.instantiateViewControllerWithIdentifier(StoryboardIdentifier.CardNavController) as! UINavigationController
-        let cardViewController = navViewController.visibleViewController as! CardViewController
-        cardViewController.cardInstance = cardInstance
-        return navViewController
-    }
-    
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return cardInstances.count
-    }
-    
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return 0
     }
     
     //
     // MARK: - UIPageViewControllerDelegate
     //
     
+    func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [AnyObject]) {
+        nextIndex = getIndex(pendingViewControllers[0] as! UIViewController)
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
+        if (completed) {
+            pageControl.currentPage = nextIndex
+        }
+    }
 }

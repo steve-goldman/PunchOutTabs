@@ -44,6 +44,8 @@ class CardViewController: UIViewController
         }
     }
     
+    var index: Int!
+    
     //
     // MARK: - Lifecycle
     //

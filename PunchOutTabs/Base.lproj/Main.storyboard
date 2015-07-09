@@ -782,10 +782,22 @@
                     <view key="view" contentMode="scaleToFill" id="wv4-xZ-7b7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QrH-7a-uHi">
+                                <rect key="frame" x="300.5" y="551" width="0.0" height="0.0"/>
+                            </pageControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QrH-7a-uHi" firstAttribute="centerX" secondItem="wv4-xZ-7b7" secondAttribute="centerX" id="hLe-zb-JIz"/>
+                            <constraint firstItem="QrH-7a-uHi" firstAttribute="bottom" secondItem="dOB-1x-QnY" secondAttribute="top" id="pyq-Oq-wb9"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="My Cards" image="icon_home" id="N6x-na-DyJ"/>
+                    <connections>
+                        <outlet property="pageControl" destination="QrH-7a-uHi" id="83B-hO-p0Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="puw-SM-3Ww" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
