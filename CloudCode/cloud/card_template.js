@@ -1,3 +1,6 @@
+const CardTemplate = Parse.Object.extend("CardTemplate");
+const CardInstance = Parse.Object.extend("CardInstance");
+
 //
 // methods called by users via cloud definitions in main.js
 //
@@ -105,8 +108,6 @@ exports.validate = function(request, response) {
     response.success();
 }
 
-const CardInstance = Parse.Object.extend("CardInstance");
-
 exports.beforeDelete = function(request, response) {
     // only allow delete if card is active.  non-active cards get cleaned
     // up by the background job
@@ -134,8 +135,6 @@ exports.beforeDelete = function(request, response) {
 exports.removeOrphaned = function(request, status) {
     // card templates where isActive is NULL and no user is working on it
     // (that is to say that the user has started working on another since)
-
-    const CardTemplate = Parse.Object.extend("CardTemplate");
 
     var query = new Parse.Query(CardTemplate);
     query.doesNotExist("isActive");
