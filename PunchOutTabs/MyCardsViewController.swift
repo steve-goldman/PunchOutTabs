@@ -54,7 +54,7 @@ class MyCardsViewController: UIViewController, UIPageViewControllerDataSource
         // TODO: move all the data stuff into a model class
         CardInstance.query(user: PFUser.currentUser()!).findObjectsInBackgroundWithBlock { (results, error) in
             if results != nil && !results!.isEmpty {
-                self.cardInstances = results as! [CardInstance]
+                self.cardInstances = results!.reverse() as! [CardInstance]
                 self.pageViewController.setViewControllers([self.makeViewController(cardInstance: self.cardInstances[0])], direction: .Forward, animated: true, completion: nil)
             } else {
                 self.pageViewController.setViewControllers([self.storyboard?.instantiateViewControllerWithIdentifier(StoryboardIdentifier.NewCardNavController) as! UIViewController], direction: .Forward, animated: true, completion: nil)
