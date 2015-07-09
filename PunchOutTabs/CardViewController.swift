@@ -7,47 +7,50 @@
 //
 
 import UIKit
+import Parse
 
-class CardViewController: UIViewController {
+class CardViewController: UIViewController
+{
 
-    var cardDataSource: CardDataSource!
+    //
+    // MARK: - Properties
+    //
     
-    @IBOutlet weak var centerLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView! {
+        didSet {
+            if cardTemplate == nil {
+                activityIndicator.startAnimating()
+            }
+        }
+    }
     
-    private var cardBoxViewManager: TwoTwoByTwoCardBoxViewManager!
-
-    override func viewDidLoad() {
+    @IBOutlet weak var navTitle: UINavigationItem!
+    
+    var cardTemplate: CardTemplate!
+    
+    var cardInstance: CardInstance! {
+        didSet {
+            activityIndicator?.startAnimating()
+            cardTemplate = PFObject(withoutDataWithClassName: CardTemplate.ClassName, objectId: cardInstance.cardTemplate.objectId) as! CardTemplate
+            cardTemplate.fetchIfNeededInBackgroundWithBlock { (cardTemplate, error) -> Void in
+                self.activityIndicator?.stopAnimating()
+                if cardTemplate != nil {
+                    // TODO: is this closure capture?? -- fix if so
+                    self.navTitle.title = self.cardTemplate.name
+                } else {
+                    UIAlertView(title: "Oops...", message: error!.localizedDescription, delegate: nil, cancelButtonTitle: "Got it").show()
+                }
+            }
+        }
+    }
+    
+    //
+    // MARK: - Lifecycle
+    //
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        
-        cardDataSource = UserDefaultsCardDataSource(key: "mycard", count: TwoTwoByTwoCardBoxViewManager.NumBoxes)
-
-        var i = 0
-        
-        cardBoxViewManager = TwoTwoByTwoCardBoxViewManager(parentView: view, forceSquare: true) {
-            let index = i++
-            let cardBoxView = CardBoxView.create(index: index)
-            cardBoxView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "cardBoxTapped:"))
-            cardBoxView.stamped = self.cardDataSource.isStamped(index)
-            return cardBoxView
-        }
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        cardBoxViewManager.update(index: 0, frame: CGRect(x: 0, y: topLayoutGuide.length, width: view.frame.width, height: centerLabel.frame.minY - topLayoutGuide.length))
-        
-        cardBoxViewManager.update(index: 1, frame: CGRect(x: 0, y: centerLabel.frame.maxY, width: view.frame.width, height: view.frame.maxY - bottomLayoutGuide.length - centerLabel.frame.maxY))
-    }
-    
-    func cardBoxTapped(gesture: UITapGestureRecognizer) {
-        let cardBoxView = gesture.view as! CardBoxView
-        if cardBoxView.contains(gesture.locationInView(cardBoxView)) {
-            let stamped = !cardDataSource.isStamped(cardBoxView.index)
-            cardDataSource.stamp(cardBoxView.index, stamped: stamped)
-            cardBoxView.stamped = stamped
-            performSegueWithIdentifier("Stamp", sender: self)
-        }
     }
     
 }

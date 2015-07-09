@@ -18,29 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14 DAYS. 8 CLASSES. GO." textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zPc-gk-jlo">
-                                <rect key="frame" x="16" y="272" width="568" height="56"/>
-                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Book" family="Kohinoor Devanagari" pointSize="40"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="MTK-Jp-zs2">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="zPc-gk-jlo" firstAttribute="leading" secondItem="Hsi-TQ-KtN" secondAttribute="leadingMargin" id="ga0-Ma-kyQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zPc-gk-jlo" secondAttribute="trailing" id="iwb-3R-2uN"/>
-                            <constraint firstItem="VLJ-1d-bkS" firstAttribute="top" secondItem="zPc-gk-jlo" secondAttribute="bottom" constant="248" id="nZo-Pk-h4t"/>
-                            <constraint firstAttribute="centerY" secondItem="zPc-gk-jlo" secondAttribute="centerY" id="qPI-7H-lOy"/>
-                            <constraint firstAttribute="centerY" secondItem="zPc-gk-jlo" secondAttribute="centerY" id="unC-iJ-0d9"/>
-                            <constraint firstAttribute="centerX" secondItem="zPc-gk-jlo" secondAttribute="centerX" id="w0G-qq-bth"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="unC-iJ-0d9"/>
-                                <exclude reference="nZo-Pk-h4t"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Exhale Flatiron June Contest" id="XRK-C9-WHo">
+                    <navigationItem key="navigationItem" id="XRK-C9-WHo">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="U7b-Xm-1xo" userLabel="New Card">
                             <connections>
                                 <segue destination="8He-iM-oSy" kind="showDetail" id="Zh7-di-6tS"/>
@@ -53,33 +37,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="centerLabel" destination="zPc-gk-jlo" id="IRP-Nc-Qnt"/>
-                        <segue destination="qFc-M6-rmL" kind="popoverPresentation" identifier="Stamp" popoverAnchorView="zPc-gk-jlo" id="iha-hr-uV3">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
-                        </segue>
+                        <outlet property="activityIndicator" destination="MTK-Jp-zs2" id="Aom-Xh-53O"/>
+                        <outlet property="navTitle" destination="XRK-C9-WHo" id="QhM-Ds-Yb3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaS-dO-paf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="636" y="2384"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="lsS-Ds-bZE">
-            <objects>
-                <viewController id="qFc-M6-rmL" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Khd-Im-THy"/>
-                        <viewControllerLayoutGuide type="bottom" id="VfI-gB-gDo"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="73P-Aj-QhP">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fp6-S3-RW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1476" y="1192"/>
+            <point key="canvasLocation" x="2124" y="2384"/>
         </scene>
         <!--Back of Card-->
         <scene sceneID="XPI-OO-Gv5">
@@ -98,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GV4-nP-tXU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2228" y="1946"/>
+            <point key="canvasLocation" x="3716" y="1946"/>
         </scene>
         <!--New Card-->
         <scene sceneID="yun-LG-M28">
@@ -181,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mmA-uT-oT1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2228" y="2709"/>
+            <point key="canvasLocation" x="3716" y="2709"/>
         </scene>
         <!--Classes-->
         <scene sceneID="pAw-RU-igw">
@@ -350,7 +314,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AC1-uo-oDu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2418" y="3498"/>
+            <point key="canvasLocation" x="3906" y="3498"/>
         </scene>
         <!--End Date-->
         <scene sceneID="3p0-Fh-f1c">
@@ -414,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MLL-BA-Woa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2942" y="2709"/>
+            <point key="canvasLocation" x="4430" y="2709"/>
         </scene>
         <!--Punch It-->
         <scene sceneID="Irr-UK-5UR">
@@ -541,6 +505,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ncW-ON-7Cj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-104" y="1556"/>
+        </scene>
+        <!--My Cards-->
+        <scene sceneID="1gh-k7-Fbp">
+            <objects>
+                <pageViewController storyboardIdentifier="MyCardsPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="fW4-6S-d5d" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Cards" image="icon_home" selectedImage="icon_home" id="wLy-M4-RbN"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9BR-eN-36x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1256" y="1616"/>
         </scene>
         <!--My Sign Up View Controller-->
         <scene sceneID="2c0-oy-0De">
@@ -790,9 +764,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="9VW-an-shx" kind="relationship" relationship="viewControllers" id="qVz-fH-Cpe"/>
-                        <segue destination="9nJ-kH-uRW" kind="relationship" relationship="viewControllers" id="dCQ-rN-002"/>
                         <segue destination="l5G-uM-TgZ" kind="relationship" relationship="viewControllers" id="1Wb-vZ-SWF"/>
                         <segue destination="UG2-G7-J9q" kind="show" identifier="Log In" id="do6-aV-VD9"/>
+                        <segue destination="Yrb-Yn-ZpN" kind="relationship" relationship="viewControllers" id="tb8-rk-V8i"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wnu-ul-MBx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -800,9 +774,29 @@
             <point key="canvasLocation" x="-1026" y="1556"/>
         </scene>
         <!--My Cards-->
+        <scene sceneID="PZc-WP-iWG">
+            <objects>
+                <viewController storyboardIdentifier="I" id="Yrb-Yn-ZpN" customClass="MyCardsViewController" customModule="PunchOutTabs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EjR-gL-e5i"/>
+                        <viewControllerLayoutGuide type="bottom" id="dOB-1x-QnY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wv4-xZ-7b7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <tabBarItem key="tabBarItem" title="My Cards" image="icon_home" id="N6x-na-DyJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="puw-SM-3Ww" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-104" y="2384"/>
+        </scene>
+        <!--My Cards-->
         <scene sceneID="pZk-Wr-ZWr">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9nJ-kH-uRW" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CardNavController" automaticallyAdjustsScrollViewInsets="NO" id="9nJ-kH-uRW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Cards" image="icon_home" id="3gu-SQ-YXm" userLabel="My Cards"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZIf-fq-w3O">
@@ -816,7 +810,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M0S-EU-gxh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-112" y="2384"/>
+            <point key="canvasLocation" x="1256" y="2384"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="2eh-Xt-jPj">
@@ -939,7 +933,7 @@
         <!--Navigation Controller-->
         <scene sceneID="0U9-Lt-OOK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8He-iM-oSy" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NewCardNavController" automaticallyAdjustsScrollViewInsets="NO" id="8He-iM-oSy" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Je1-th-gBo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -952,7 +946,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iuj-tC-L8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1476" y="2709"/>
+            <point key="canvasLocation" x="2964" y="2709"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="smz-aJ-i8o">
@@ -970,7 +964,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hkE-PC-Zsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1476" y="1946"/>
+            <point key="canvasLocation" x="2964" y="1946"/>
         </scene>
     </scenes>
     <resources>
@@ -980,7 +974,7 @@
         <image name="icon_star" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="w7T-2K-aJj"/>
-        <segue reference="ukh-Ve-96K"/>
+        <segue reference="do6-aV-VD9"/>
+        <segue reference="TMe-PR-M7D"/>
     </inferredMetricsTieBreakers>
 </document>

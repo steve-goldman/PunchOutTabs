@@ -55,6 +55,7 @@
 		AA8CFD001B4B2B3F00DFF5BF /* TypeCountsNewCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CFCFF1B4B2B3F00DFF5BF /* TypeCountsNewCardViewController.swift */; };
 		AA8CFD021B4B323700DFF5BF /* CardTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CFD011B4B323700DFF5BF /* CardTemplate.swift */; };
 		AA8CFD061B4C511200DFF5BF /* CardInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CFD051B4C511200DFF5BF /* CardInstance.swift */; };
+		AA8CFD0A1B4E04CC00DFF5BF /* MyCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CFD091B4E04CC00DFF5BF /* MyCardsViewController.swift */; };
 		AA9B511A1B43AADC007E95EF /* ClassesDataSourceParseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9B51191B43AADC007E95EF /* ClassesDataSourceParseImpl.swift */; };
 		AA9B511C1B43B0CA007E95EF /* ClassesDataSourceParseImplTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9B511B1B43B0CA007E95EF /* ClassesDataSourceParseImplTest.swift */; };
 		AADC0E5D1B43A2CC00C0F92C /* Gyms.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC0E5C1B43A2CC00C0F92C /* Gyms.swift */; };
@@ -126,6 +127,7 @@
 		AA8CFCFF1B4B2B3F00DFF5BF /* TypeCountsNewCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeCountsNewCardViewController.swift; sourceTree = "<group>"; };
 		AA8CFD011B4B323700DFF5BF /* CardTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTemplate.swift; sourceTree = "<group>"; };
 		AA8CFD051B4C511200DFF5BF /* CardInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardInstance.swift; path = ../CardInstance.swift; sourceTree = "<group>"; };
+		AA8CFD091B4E04CC00DFF5BF /* MyCardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCardsViewController.swift; sourceTree = "<group>"; };
 		AA9B51191B43AADC007E95EF /* ClassesDataSourceParseImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesDataSourceParseImpl.swift; sourceTree = "<group>"; };
 		AA9B511B1B43B0CA007E95EF /* ClassesDataSourceParseImplTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesDataSourceParseImplTest.swift; sourceTree = "<group>"; };
 		AADC0E5C1B43A2CC00C0F92C /* Gyms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gyms.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		AA2973FC1B3C5C7D008C7FBD /* Card */ = {
 			isa = PBXGroup;
 			children = (
+				AA8CFD091B4E04CC00DFF5BF /* MyCardsViewController.swift */,
 				AA8CFCFC1B4B2AEB00DFF5BF /* New Card */,
 				AA2973FA1B3C5C79008C7FBD /* CardViewController.swift */,
 				AA2974001B3CF043008C7FBD /* CardDataSource.swift */,
@@ -460,6 +463,7 @@
 				AA8CFD061B4C511200DFF5BF /* CardInstance.swift in Sources */,
 				AA2974051B3CF31D008C7FBD /* UserDefaultsCardDataSource.swift in Sources */,
 				AA8CFD021B4B323700DFF5BF /* CardTemplate.swift in Sources */,
+				AA8CFD0A1B4E04CC00DFF5BF /* MyCardsViewController.swift in Sources */,
 				AA2974291B40B117008C7FBD /* MustLoginTabBarController.swift in Sources */,
 				AA8CFCE91B4A089800DFF5BF /* MySignUpViewController.swift in Sources */,
 				AA8906E31B3BC8C600A42646 /* LeaderboardElement.swift in Sources */,
